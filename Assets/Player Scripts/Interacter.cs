@@ -6,8 +6,7 @@ using UnityEngine;
 public class Interacter : MonoBehaviour
 {
     private List<IInteractable> interactables = new List<IInteractable>();
-    private float go;
-    private float cooldown;
+    [SerializeField] private float cooldown;
 
     private IInteractable getClosestInteractable()
     {
@@ -62,18 +61,6 @@ public class Interacter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E))
-        {   
-            Interact();
-        }
-
-        go = Input.GetAxis("Horizontal");
-
         cooldown -= Time.deltaTime;
-    }
-
-    private void FixedUpdate()
-    {
-        GetComponent<Rigidbody2D>().velocity = Vector2.right * go;
     }
 }
