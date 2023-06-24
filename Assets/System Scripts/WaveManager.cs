@@ -5,12 +5,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Wave[] waves;
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private Transform enemiesSpawnPoint;
+    [SerializeField] private PlayerMenager player;
 
     private int currentWave = -1;
 
     public int EnemiesAlive { get; set; }
     public Transform EnemiesParent => enemiesParent;
     public Vector2 EnemiesSpawnPoint => enemiesSpawnPoint.position;
+    public PlayerMenager Player => player;
 
     private void Update()
     {
