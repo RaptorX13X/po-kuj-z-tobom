@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pillow : MonoBehaviour
 {
     [SerializeField] private float radius;
+    [SerializeField] private ParticleSystem feathers;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out PlayerMenager playerMenager))
@@ -17,6 +18,19 @@ public class Pillow : MonoBehaviour
             if (hit.collider.gameObject.TryGetComponent(out PlayerMenager menager)) continue;
             if (hit.collider.gameObject.TryGetComponent(out Health health)) health.Damage();
         }
+        ExplodePillow();
+    }
+
+    private void ExplodePillow()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        feathers.Play();
+        Invoke("DestroyMe", 1f);
+    }
+
+    private void DestroyMe()
+    {
         Destroy(gameObject);
     }
 }
