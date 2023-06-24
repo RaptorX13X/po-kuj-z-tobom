@@ -24,6 +24,8 @@ public class Unit : MonoBehaviour
             possibleStates[i] = Instantiate(possibleStates[i]);
         }
 
+        GetComponent<Health>().OnDeath += Die;
+
         rb = GetComponent<Rigidbody2D>();
 
         SwitchState(0);

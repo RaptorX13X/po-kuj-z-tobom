@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health;
 
+    public event Action OnDeath;
+
     public void Damage()
     {
         health -= 1;
-        Debug.Log(health);
 
         if (health == 0)
         {
+            OnDeath?.Invoke();
             Destroy(gameObject);
         }
     }
-    
-    
 }
