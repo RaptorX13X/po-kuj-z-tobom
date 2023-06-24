@@ -14,6 +14,11 @@ public class WaveManager : MonoBehaviour
     public Vector2 EnemiesSpawnPoint => enemiesSpawnPoint.position;
     public PlayerMenager Player => player;
 
+    private void Start()
+    {
+        player.GetComponent<Health>().OnDeath += DisplayLoseScreen;
+    }
+
     private void Update()
     {
         if (EnemiesAlive == 0)
@@ -45,5 +50,11 @@ public class WaveManager : MonoBehaviour
     private void DisplayWinScreen()
     {
         Debug.Log("You won!!");
+    }
+
+    private void DisplayLoseScreen()
+    {
+        Debug.Log("You lost!!");
+        Time.timeScale = 0;
     }
 }

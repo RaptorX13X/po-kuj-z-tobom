@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5508962552280938138}
   - component: {fileID: -9099552161578258234}
   - component: {fileID: -1668180358730982462}
+  - component: {fileID: -7904657345055361495}
   m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+--- !u!114 &-7904657345055361495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983454898995272309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6a050ae9f71ac43989e466965e5157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagingPeriodSeconds: 0.7
