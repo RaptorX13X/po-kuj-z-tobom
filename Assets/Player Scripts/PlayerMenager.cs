@@ -6,12 +6,15 @@ public class PlayerMenager : MonoBehaviour
     [SerializeField] Movemnet movement;
     [SerializeField] Interacter interacter;
     [SerializeField] private Boomerang boomerang;
+    [SerializeField] private ShardThrower shart;
 
     private void FixedUpdate()
     {
         movement.Move(inputMenager.input, inputMenager.mousePos);
         if (inputMenager.yeet)
             boomerang.Throw(inputMenager.mousePos);
+        if (inputMenager.glassYeet)
+            shart.ShardThrow(inputMenager.mousePos);
     }
 
     private void Update()

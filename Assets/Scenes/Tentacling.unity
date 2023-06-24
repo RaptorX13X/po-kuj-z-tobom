@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &91985628
 Rigidbody2D:
   serializedVersion: 4
@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 1181578945}
   - component: {fileID: 1181578947}
   - component: {fileID: 1181578946}
+  - component: {fileID: 1181578948}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -708,6 +709,24 @@ MonoBehaviour:
   movement: {fileID: 1181578945}
   interacter: {fileID: 1181578942}
   boomerang: {fileID: 91985629}
+  shart: {fileID: 1181578948}
+--- !u!114 &1181578948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181578938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852bad45b23f704cb640f9b34a66005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shardPrefab: {fileID: 7935227730692046854, guid: 437a740feb0e3504ea3c868e4f7d0b7e, type: 3}
+  cooldown: 0.5
+  vel: 6
+  distance: 1.5
+  playerBody: {fileID: 1181578944}
 --- !u!1 &1323213230
 GameObject:
   m_ObjectHideFlags: 0
