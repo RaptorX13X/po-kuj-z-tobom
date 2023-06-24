@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3494076711348245091}
   - component: {fileID: 2717646687448837158}
   m_Layer: 6
-  m_Name: Square
+  m_Name: AbstractEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2978441131543021452
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d249ae328794543bcb2d09e476600d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleStates:
-  - {fileID: 11400000, guid: cb8069d334852234d955f784737476f9, type: 2}
-  - {fileID: 11400000, guid: 771e1ed7d2c1ab14fa1617acdee51bbc, type: 2}
+  possibleStates: []
 --- !u!61 &-8702661904317448425
 BoxCollider2D:
   m_ObjectHideFlags: 0

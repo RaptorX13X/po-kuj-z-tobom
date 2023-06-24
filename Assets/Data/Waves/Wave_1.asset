@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Wave_1
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
-  - {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
-  - {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
-  - {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
-  delayInSeconds: 2
+  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
+  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
+  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
+  delayInSeconds: 1

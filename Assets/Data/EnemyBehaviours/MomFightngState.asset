@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff82ae0c00ead3046ad1b715746d0965, type: 3}
-  m_Name: Wave_0
+  m_Script: {fileID: 11500000, guid: 6c45b3f988a2cf24db68074e623d5c60, type: 3}
+  m_Name: MomFightngState
   m_EditorClassIdentifier: 
-  units:
-  - {fileID: 154031089489108787, guid: 0a803b4c238fed6468ff98b40d9a3de2, type: 3}
-  delayInSeconds: 1
+  speed: 4
+  enviroRays: 36
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  distanceWeight: 0.8

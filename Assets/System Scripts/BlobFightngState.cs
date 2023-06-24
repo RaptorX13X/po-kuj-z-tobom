@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlobFightngState", menuName = "SO/BlobFightngState")]
 public class BlobFightngState : AUnitState
@@ -22,7 +23,7 @@ public class BlobFightngState : AUnitState
 
     public override void FixedUpdateState(Unit unit)
     {
-        unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, targetPosition, jumpSpeed * Time.deltaTime));
+        unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, targetPosition, jumpSpeed * Time.fixedDeltaTime));
 
         if (Vector2.Distance(unit.transform.position, targetPosition) <= 0.01f)
             unit.SwitchState(BlobChillingState.StateId);
