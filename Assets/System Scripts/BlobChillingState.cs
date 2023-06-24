@@ -20,6 +20,11 @@ public class BlobChillingState : AUnitState
         // Nothing
     }
 
+    public override void OnCollisionEnterAction(Unit unit, Collision2D collision)
+    {
+        // Nothing
+    }
+
     public override void UpdateState(Unit unit)
     {
         remainingChillingTime -= Time.deltaTime;

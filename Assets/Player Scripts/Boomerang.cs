@@ -42,7 +42,7 @@ public class Boomerang : MonoBehaviour
         body.position = player.position + new Vector2(player.transform.up.x, player.transform.up.y) * distance;
         body.rotation = player.rotation;
         ready = false;
-        var dir = transform.up;
+        var dir = (mousePos - transform.position).normalized;
         body.velocity = new Vector2(dir.x, dir.y) * velocity;
         collider.enabled = true;
         flightTimer = 0;

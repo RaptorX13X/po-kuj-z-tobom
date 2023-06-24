@@ -6,10 +6,17 @@ public class DamageOnContact : MonoBehaviour
 
     private float timeToNextDamageDeal = 0f;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        DealDamageOnPlayerCollision(collision.collider);
+    }
+
+    // for klapek only
     private void OnTriggerEnter2D(Collider2D other)
     {
         DealDamageOnPlayerCollision(other);
     }
+
 
     private void DealDamageOnPlayerCollision(Collider2D other)
     {

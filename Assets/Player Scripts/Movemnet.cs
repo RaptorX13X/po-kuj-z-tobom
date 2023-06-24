@@ -6,10 +6,13 @@ public class Movemnet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
+    [SerializeField] private float acceleratione;
     public void Move(Vector2 input, Vector3 mousePos)
     {
-        rb.velocity = input.normalized * speed;
-        var dir = (mousePos - transform.position).normalized;
-        rb.rotation = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
+        var newVelocity = rb.velocity + acceleratione * Time.fixedDeltaTime * input.normalized;
+        if (newVelocity.magnitude <= speed)
+        {
+            rb.velocity = newVelocity;
+        }
     }
 }

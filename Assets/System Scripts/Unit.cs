@@ -41,6 +41,11 @@ public class Unit : MonoBehaviour
         currentState.FixedUpdateState(this);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentState.OnCollisionEnterAction(this, collision);
+    }
+
     public void SwitchState(int newStateId)
     {
         currentState = possibleStates[newStateId];

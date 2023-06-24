@@ -37,9 +37,12 @@ public class BlankieController : MonoBehaviour
         }
     }
 
-    public void StartAttack()
+    public void StartAttack(Vector3 referencePoint)
     {
         if (attackInProgress != 0) return;
+
+        transform.up = (referencePoint - transform.position).normalized;
+
         attackInProgress = 1;
         timer = 0;
         attackCollider.enabled = true;

@@ -15,11 +15,13 @@ public class ShardThrower : MonoBehaviour
     {
         if (timer >= 0)
             return;
+
         GameObject missile = Instantiate(shardPrefab, transform.position, Quaternion.identity);
         missile.GetComponent<Rigidbody2D>().rotation = playerBody.rotation;
         timer = cooldown;
-        var dir = transform.up;
+        var dir = (mousePos - transform.position).normalized;
         missile.GetComponent<Rigidbody2D>().velocity = new Vector2(dir.x, dir.y) * vel;
+        missile.transform.up = dir;
     }
 
     private void Update()

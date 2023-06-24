@@ -51,6 +51,7 @@ public class MomFightngState : AUnitState
         lastDirection = bestDirection;
         unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, unit.transform.position + (bestDirection + secondBestDirection) / 2f, speed * Time.fixedDeltaTime));
     }
+
     public override void UpdateState(Unit unit)
     {
         // Throwing
@@ -60,5 +61,10 @@ public class MomFightngState : AUnitState
             Klapek klapklap = Instantiate(klapekPrefab, unit.transform.position, Quaternion.identity);
             klapklap.Init(unit, unit.PlayerReference.transform.position);
         }
+    }
+
+    public override void OnCollisionEnterAction(Unit unit, Collision2D collision)
+    {
+        // Nothing
     }
 }

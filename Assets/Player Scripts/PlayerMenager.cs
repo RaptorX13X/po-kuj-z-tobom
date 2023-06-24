@@ -45,7 +45,7 @@ public class PlayerMenager : MonoBehaviour
             switch (activeWeapon)
             {
                 case Weapons.Blanket:
-                    blankieController.StartAttack();
+                    blankieController.StartAttack(inputMenager.mousePos);
                     actionCooldown = 0.1f;
                     break;
                 case Weapons.Keyboard:

@@ -33,4 +33,9 @@ public class BlobFightngState : AUnitState
     {
         // Nothing
     }
+
+    public override void OnCollisionEnterAction(Unit unit, Collision2D collision)
+    {
+        // Nothing
+    }
 }
