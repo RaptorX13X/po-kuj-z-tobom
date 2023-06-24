@@ -18,3 +18,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   distanceWeight: 0.8
+  klapekPrefab: {fileID: 5606488942091966486, guid: 65461b70e8801a549835bf3fc672520c, type: 3}
