@@ -10,6 +10,7 @@ public class InputMenager : MonoBehaviour
     public bool yeet { private set; get; }
     public bool glassYeet { private set; get; }
     public Vector3 mousePos;
+    public bool keyboard { private set; get; }
 
 void Update()
     {
@@ -19,6 +20,7 @@ void Update()
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         glassYeet = Input.GetMouseButton(0);
+        keyboard = Input.GetKey(KeyCode.F);
     }
 
 }

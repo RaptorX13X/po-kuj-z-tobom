@@ -7,6 +7,7 @@ public class PlayerMenager : MonoBehaviour
     [SerializeField] Interacter interacter;
     [SerializeField] private Boomerang boomerang;
     [SerializeField] private ShardThrower shart;
+    [SerializeField] private KeyboardRotator keyboardRotator;
 
     private void FixedUpdate()
     {
@@ -20,5 +21,6 @@ public class PlayerMenager : MonoBehaviour
     private void Update()
     {
         if (inputMenager.interact) interacter.Interact();
+        if (inputMenager.keyboard) keyboardRotator.StartAttack();
     }
 }
