@@ -9,11 +9,15 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject howToPlay;
+    [SerializeField] private GameObject credits;
+    [SerializeField] private GameObject settings;
 
     private void Start()
     {
         mainMenu.SetActive(true);
         howToPlay.SetActive(false);
+        credits.SetActive(false);
+        settings.SetActive(false);
     }
 
     public void NewGame()
@@ -27,10 +31,24 @@ public class UIManager : MonoBehaviour
         howToPlay.SetActive(true);
     }
     
-    public void HowToPlayExit()
+    public void BackToMenu()
     {
         howToPlay.SetActive(false);
+        credits.SetActive(false);
+        settings.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        mainMenu.SetActive(false);
+        credits.SetActive(true);
+    }
+
+    public void Settings()
+    {
+        mainMenu.SetActive(false);
+        settings.SetActive(true);
     }
 
     public void ExitGame()
