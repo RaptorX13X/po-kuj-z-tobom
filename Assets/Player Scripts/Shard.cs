@@ -9,8 +9,7 @@ public class Shard : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerMenager playerMenager))
             return;
-        other.gameObject.TryGetComponent(out Health health);
-        health.Damage();
+        if(other.gameObject.TryGetComponent(out Health health)) health.Damage();
         Destroy(gameObject);
     }
 }
