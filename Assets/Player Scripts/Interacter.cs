@@ -30,7 +30,6 @@ public class Interacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("entered");
         if (other.TryGetComponent(out IInteractable interactable))
         {
             interactables.Add(interactable);
@@ -39,7 +38,6 @@ public class Interacter : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("exit");
         if (other.TryGetComponent(out IInteractable interactable))
         {
             interactables.Remove(interactable);
