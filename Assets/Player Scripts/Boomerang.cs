@@ -28,7 +28,11 @@ public class Boomerang : MonoBehaviour
         }
         else
         {
-            Debug.Log("Damage dealt");
+            if (!ready)
+            {
+                other.gameObject.TryGetComponent(out Health health);
+                health.Damage();
+            }
         }
     }
 

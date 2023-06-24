@@ -15,7 +15,7 @@ void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         interact = Input.GetKey(KeyCode.E);
-        yeet = Input.GetMouseButton(6);
+        yeet = Input.GetMouseButton(1);
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         glassYeet = Input.GetMouseButton(0);
