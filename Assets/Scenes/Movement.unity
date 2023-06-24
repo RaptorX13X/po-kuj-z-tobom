@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1125da37649e65e488d030555587253d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mousePos: {x: 0, y: 0, z: 0}
 --- !u!114 &1292439051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +384,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputMenager: {fileID: 1292439050}
   movement: {fileID: 1292439051}
+  interacter: {fileID: 0}
+  boomerang: {fileID: 0}
+  shart: {fileID: 0}
+  pillow: {fileID: 0}
+  keyboardRotator: {fileID: 0}
+  blankieController: {fileID: 0}
 --- !u!1 &2018039454
 GameObject:
   m_ObjectHideFlags: 0
