@@ -11,6 +11,8 @@ public class InputMenager : MonoBehaviour
     public bool glassYeet { private set; get; }
     public Vector3 mousePos;
     public bool keyboard { private set; get; }
+    
+    public bool blankie { private set; get; }
 
 void Update()
     {
@@ -21,6 +23,7 @@ void Update()
         mousePos.z = 0;
         glassYeet = Input.GetMouseButton(0);
         keyboard = Input.GetKey(KeyCode.F);
+        blankie = Input.GetMouseButton(2);
     }
 
 }

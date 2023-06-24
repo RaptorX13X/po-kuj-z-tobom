@@ -8,6 +8,7 @@ public class PlayerMenager : MonoBehaviour
     [SerializeField] private Boomerang boomerang;
     [SerializeField] private ShardThrower shart;
     [SerializeField] private KeyboardRotator keyboardRotator;
+    [SerializeField] private BlankieController blankieController;
 
     private void FixedUpdate()
     {
@@ -22,5 +23,6 @@ public class PlayerMenager : MonoBehaviour
     {
         if (inputMenager.interact) interacter.Interact();
         if (inputMenager.keyboard) keyboardRotator.StartAttack();
+        if (inputMenager.blankie) blankieController.StartAttack();
     }
 }
