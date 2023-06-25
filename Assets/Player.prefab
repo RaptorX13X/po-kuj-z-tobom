@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 6007057073784997863}
   - component: {fileID: 3295920275775044058}
   - component: {fileID: 3662084371060295264}
+  - component: {fileID: 2457404006117632785}
   m_Layer: 7
   m_Name: VisiblePart
   m_TagString: Untagged
@@ -239,6 +240,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2457404006117632785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859474305903082265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b339008869be64440bacec3af4381a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghosts: []
+  usedGhosts: []
+  sprites:
+  - {fileID: 21300000, guid: 1d4aa82db7b2c354d8545e24cebb2a9c, type: 3}
+  - {fileID: 21300000, guid: e18637ab0e19ce34f9f1b1f3cf94fd5b, type: 3}
+  - {fileID: 21300000, guid: 7577666df15ef7847bfcf2a895160186, type: 3}
+  - {fileID: 21300000, guid: 0a2f48ebd90ee7e44a257f0d7b7fe338, type: 3}
+  color: {r: 0.7169812, g: 0.016233515, b: 0.58259374, a: 0.92156863}
+  cooldown: 0.05
+  duration: 0.3
 --- !u!1 &6060627224824099375
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +610,7 @@ MonoBehaviour:
   blankieController: {fileID: 7357691657722625612}
   animator: {fileID: 3662084371060295264}
   dashController: {fileID: 1897512780}
+  pickUpSound: {fileID: 0}
 --- !u!114 &6250364863067498911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
   dashPressed: 0
+  gameUIManager: {fileID: 0}
 --- !u!114 &6250364863067498905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +642,7 @@ MonoBehaviour:
   cooldown: 0.4
   vel: 12
   playerBody: {fileID: 6250364863067498909}
+  yeetSound: {fileID: 0}
 --- !u!114 &7886017863706609646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +659,7 @@ MonoBehaviour:
   cooldown: 0.7
   vel: 9
   playerBody: {fileID: 6250364863067498909}
+  yeetSound: {fileID: 0}
 --- !u!58 &1299046416526441178
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -664,6 +691,8 @@ MonoBehaviour:
   dashSpeed: 5
   dashDuration: 0.2
   cooldown: 5
+  dashSound: {fileID: 0}
+  se: {fileID: 2457404006117632785}
 --- !u!1 &6250364864090229127
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +914,7 @@ MonoBehaviour:
   attackDuration: 0.2
   swingAngle: 120
   attackCollider: {fileID: 4478451692419060729}
+  attackInProgress: 0
   swingSound: {fileID: 8300000, guid: bfa966de69a74ad4d9c1096d85d82602, type: 3}
 --- !u!1 &7476850838258868519
 GameObject:

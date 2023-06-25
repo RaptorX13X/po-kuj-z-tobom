@@ -6,12 +6,13 @@ public class DashController : MonoBehaviour
     [SerializeField] private float dashDuration = .2f;
     [SerializeField] private float cooldown = 2f;
 
-    private bool dashing;
+    public bool dashing;
     private float timer = 0f;
     private Rigidbody2D rb;
     private Collider2D playerCollider;
 
     [SerializeField] private AudioClip dashSound;
+    [SerializeField] private SandevistanEffect se;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +24,7 @@ public class DashController : MonoBehaviour
         timer -= Time.deltaTime;
         if(dashing)
         {
+            se.UpdateSDVSTN(rb.velocity.normalized);
             if (timer <= 0f)
             {
                 dashing = false;
