@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private AudioClip doorSound;
 
     private int currentWave = -1;
+    private bool gameFinished = false;
 
     public int EnemiesAlive { get; set; }
     public Transform EnemiesParent => enemiesParent;
@@ -35,6 +36,9 @@ public class WaveManager : MonoBehaviour
 
     public void NextWave()
     {
+        if (gameFinished)
+            return;
+
         AudioManager.instance.PlaySound(doorSound);
         currentWave++;
         if (currentWave < waves.Length)
@@ -45,6 +49,7 @@ public class WaveManager : MonoBehaviour
         else
         {
             DisplayWinScreen();
+            gameFinished = true;
         }
     }
 
