@@ -11,7 +11,7 @@ public class Boomerang : MonoBehaviour
     [SerializeField]private float velocity;
     [SerializeField] private Rigidbody2D player;
     [SerializeField]private float returnAcceleration;
-    [SerializeField] private float distance;
+    [SerializeField] private float holdDistance;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float freeFlightDuration;
     private float flightTimer;
@@ -39,7 +39,7 @@ public class Boomerang : MonoBehaviour
     {
         if (!ready)
             return;
-        body.position = player.position + new Vector2(player.transform.up.x, player.transform.up.y) * distance;
+        body.position = player.position + new Vector2(player.transform.up.x, player.transform.up.y) * holdDistance;
         body.rotation = player.rotation;
         ready = false;
         var dir = (mousePos - transform.position).normalized;
@@ -63,7 +63,7 @@ public class Boomerang : MonoBehaviour
         else
         {
             body.rotation = player.rotation;
-            body.position = player.position + new Vector2(player.transform.up.x, player.transform.up.y) * distance;
+            body.position = player.position + new Vector2(player.transform.up.x, player.transform.up.y) * holdDistance;
             body.angularVelocity = 0;
         }
     }

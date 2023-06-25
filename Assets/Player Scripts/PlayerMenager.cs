@@ -23,15 +23,15 @@ public class PlayerMenager : MonoBehaviour
             {
                 case Weapons.Pillow:
                     pillow.ShardThrow(inputMenager.mousePos);
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
                 case Weapons.Shard:
                     shart.ShardThrow(inputMenager.mousePos);
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
                 case Weapons.Hanger:
                     boomerang.Throw(inputMenager.mousePos);
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
             }
         }
@@ -46,15 +46,15 @@ public class PlayerMenager : MonoBehaviour
             {
                 case Weapons.Blanket:
                     blankieController.StartAttack(inputMenager.mousePos);
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
                 case Weapons.Keyboard:
                     keyboardRotator.StartAttack();
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
                 case Weapons.None:
                     interacter.Interact();
-                    actionCooldown = 0.1f;
+                    actionCooldown = 0.3f;
                     break;
             }
         }
