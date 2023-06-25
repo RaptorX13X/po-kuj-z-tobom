@@ -287,9 +287,13 @@ PrefabInstance:
       propertyPath: possibleStates.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 0100b4a4d025e0045a1ae0b66ff42826, type: 2}
+    - target: {fileID: 4985415461214661413, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.88
+      objectReference: {fileID: 0}
     - target: {fileID: 5719371763857269330, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5911280753083692810, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_Name

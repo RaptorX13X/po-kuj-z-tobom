@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: possibleStates.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 69128700c8e4bc64e8928b2fed0bf3b3, type: 2}
+    - target: {fileID: 4985415461214661413, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5911280753083692810, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_Name
       value: Babina

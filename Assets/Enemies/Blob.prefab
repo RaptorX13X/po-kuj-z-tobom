@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: possibleStates.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 771e1ed7d2c1ab14fa1617acdee51bbc, type: 2}
+    - target: {fileID: 4985415461214661413, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.14
+      objectReference: {fileID: 0}
     - target: {fileID: 5911280753083692810, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_Name
       value: Blob

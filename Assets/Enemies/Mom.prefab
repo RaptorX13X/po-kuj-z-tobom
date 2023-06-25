@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: possibleStates.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 4e308f5b1b7dff14bb7cb7f406adfea9, type: 2}
+    - target: {fileID: 4985415461214661413, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.74
+      objectReference: {fileID: 0}
     - target: {fileID: 5719371763857269330, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2
