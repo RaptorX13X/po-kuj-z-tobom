@@ -14,6 +14,10 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameplayMusicManager gameplayMusicManager;
 
     public bool Playing => playing;
+    [SerializeField] private AudioClip victory;
+    [SerializeField] private AudioClip loss;
+    
+    
     private void Awake()
     {
         pauseScreen.SetActive(false);
@@ -46,6 +50,7 @@ public class GameUIManager : MonoBehaviour
     public void DisplayLoseScreen()
     {
         deathScreen.SetActive(true);
+        AudioManager.instance.PlaySound(loss);
         Time.timeScale = 0f;
         playing = false;
 
@@ -56,6 +61,7 @@ public class GameUIManager : MonoBehaviour
     public void DisplayVictoryScreen()
     {
         victoryScreen.SetActive(true);
+        AudioManager.instance.PlaySound(victory);
         Time.timeScale = 0f;
         playing = false;
 
