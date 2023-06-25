@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6397703557818471820}
   - component: {fileID: 2348380040543122360}
   - component: {fileID: 8341511341147816479}
+  - component: {fileID: 8324579472219407880}
   m_Layer: 0
   m_Name: pillou
   m_TagString: Untagged
@@ -149,6 +150,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   feathers: {fileID: 6842676474487746899}
+--- !u!114 &8324579472219407880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716941297950889177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac5fb2c734e264abde2307c925823e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wiggleRoom: 0.3
+  sR: {fileID: 8089246471935739203}
 --- !u!1001 &390754495871419711
 PrefabInstance:
   m_ObjectHideFlags: 0

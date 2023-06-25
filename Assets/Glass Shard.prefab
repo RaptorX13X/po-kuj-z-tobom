@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1714751786995779573}
   - component: {fileID: 8358212327404979518}
   - component: {fileID: 118972962348987838}
+  - component: {fileID: 18923386802793861}
   m_Layer: 0
   m_Name: Glass Shard
   m_TagString: Untagged
@@ -146,3 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481e5abf1dcec4643bff19fbccf2e532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &18923386802793861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935227730692046854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac5fb2c734e264abde2307c925823e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wiggleRoom: 0.3
+  sR: {fileID: 434960019292967842}
