@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "GrandpaWaitState", menuName = "SO/GrandpaWaitState")]
-public class GrandpaWaitState : AUnitState
+[CreateAssetMenu(fileName = "GrannyWaitState", menuName = "SO/GrannyWaitState")]
+public class GrannyWaitState : AUnitState
 {
-    public const int StateId = 1;
+    public const int StateId = 0;
 
-    [SerializeField] private float waitingTime = 1.5f;
-    [SerializeField] private float minWaitingTime = 0.25f;
+    [SerializeField] private float waitingTime = 5f;
     private float alreadyWaited;
 
     public override void EnterState(Unit unit)
     {
+        GrampsBrain.Instance.SetGranny(unit);
+
         alreadyWaited = 0f;
     }
 
@@ -23,9 +24,9 @@ public class GrandpaWaitState : AUnitState
     {
         alreadyWaited += Time.deltaTime;
 
-        if (alreadyWaited >= GrampsBrain.Instance.GrandpaScaling(waitingTime, minWaitingTime))
+        if (alreadyWaited >= waitingTime)
         {
-            unit.SwitchState(GrandpaFightingState.StateId);
+            unit.SwitchState(GrannyHealingState.StateId);
         }
     }
 

@@ -30,8 +30,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(float value)
+    public void Heal(int value)
     {
-        Debug.Log("Healed!!!!!!!!!!!!!!!!!!!");
+        currentHealth = Mathf.Min(health, currentHealth + value);
+        Debug.Log("Healed!");
     }
 }
