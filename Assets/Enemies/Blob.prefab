@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1524516912764811763, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524516912764811763, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: possibleStates.Array.size
       value: 2

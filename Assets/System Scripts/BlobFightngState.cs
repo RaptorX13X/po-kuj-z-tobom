@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlobFightngState", menuName = "SO/BlobFightngState")]
@@ -15,6 +16,7 @@ public class BlobFightngState : AUnitState
     private Vector2 lastPosition = Vector2.one * 9999;
 
     private Vector2 targetPosition;
+    [SerializeField] private List<AudioClip> hopClips;
 
     public override void EnterState(Unit unit)
     {
@@ -23,6 +25,14 @@ public class BlobFightngState : AUnitState
             targetPosition = unit.transform.position + Quaternion.AngleAxis(Random.Range(-angleMaxDistortion, angleMaxDistortion), Vector3.forward) * (unit.PlayerReference.transform.position - unit.transform.position).normalized * Random.Range(jumpDistance - distanceMaxDistortion, jumpDistance + distanceMaxDistortion);
         else
             targetPosition = unit.PlayerReference.transform.position;
+        AudioManager.instance.PlaySound(GetRandomSound(hopClips));
+    }
+
+    private AudioClip GetRandomSound(List<AudioClip> clipsToRandomize)
+    {
+        int randomInt = Random.Range(0, hopClips.Count);
+        AudioClip returnRandom = clipsToRandomize[randomInt];
+        return returnRandom;
     }
 
     public override void FixedUpdateState(Unit unit)
