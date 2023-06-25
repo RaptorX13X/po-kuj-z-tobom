@@ -2140,7 +2140,7 @@ PrefabInstance:
     - target: {fileID: 6250364863067498904, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
       propertyPath: damagedSound
       value: 
-      objectReference: {fileID: 8300000, guid: ae3f975ce0d97ae4aaed1df9011b13ad, type: 3}
+      objectReference: {fileID: 8300000, guid: 2f1dbbf9062388342b156346b9fa7b3c, type: 3}
     - target: {fileID: 6250364863067498905, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
       propertyPath: yeetSound
       value: 
