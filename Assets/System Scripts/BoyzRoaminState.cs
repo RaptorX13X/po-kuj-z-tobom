@@ -3,6 +3,8 @@
 [CreateAssetMenu(fileName = "BoyzRoaminState", menuName = "SO/BoyzRoaminState")]
 public class BoyzRoaminState : AUnitState
 {
+    public const int StateId = 1;
+
     [SerializeField] private float roamingRadius = 5f;
     [SerializeField] private float speed = 10f;
     [SerializeField] private int enviroRays = 36;
@@ -10,11 +12,18 @@ public class BoyzRoaminState : AUnitState
     [SerializeField, Range(0f, 1f)] private float distanceWeight = 0.8f;
 
     private Vector3 lastDirection;
-    private bool canThrow;
+
+    private float usedDistWeight;
+    private int usedEnviroRays;
+    private float usedSpeed;
+    private float usedRoamingRadius;
 
     public override void EnterState(Unit unit)
     {
-        canThrow = true;
+        usedDistWeight = Random.Range(distanceWeight - 0.3f, distanceWeight + 0.1f);
+        usedEnviroRays = Random.Range(8, usedEnviroRays);
+        usedSpeed = Random.Range(speed - 1f, speed + 0.5f);
+        usedRoamingRadius = Random.Range(usedRoamingRadius, usedRoamingRadius + 1f);
     }
 
     public override void FixedUpdateState(Unit unit)
@@ -24,11 +33,11 @@ public class BoyzRoaminState : AUnitState
 
         float bestValue = 0f;
 
-        for (int i = 0; i < enviroRays; i++)
+        for (int i = 0; i < usedEnviroRays; i++)
         {
-            Vector3 checkedDirection = Quaternion.AngleAxis(i * 360f / enviroRays, Vector3.forward) * Vector3.up;
+            Vector3 checkedDirection = Quaternion.AngleAxis(i * 360f / usedEnviroRays, Vector3.forward) * Vector3.up;
             Vector2 vectorToPlayer = unit.PlayerReference.transform.position - unit.transform.position;
-            float playerAdjustedMultiplier = -Vector3.Dot(checkedDirection, vectorToPlayer.normalized) * (roamingRadius - vectorToPlayer.magnitude);
+            float playerAdjustedMultiplier = -Vector3.Dot(checkedDirection, vectorToPlayer.normalized) * (usedRoamingRadius - vectorToPlayer.magnitude);
             float movementSmoothnessMultiplier = Vector3.Dot(checkedDirection, lastDirection);
             float enviroAdjustedMultiplier = 0f;
 
@@ -36,7 +45,7 @@ public class BoyzRoaminState : AUnitState
 
             if (hit.collider != null)
             {
-                enviroAdjustedMultiplier = hit.distance * distanceWeight;
+                enviroAdjustedMultiplier = hit.distance * usedDistWeight;
             }
 
             if (bestValue < playerAdjustedMultiplier + enviroAdjustedMultiplier + movementSmoothnessMultiplier)
@@ -48,7 +57,7 @@ public class BoyzRoaminState : AUnitState
             }
         }
         lastDirection = bestDirection;
-        unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, unit.transform.position + (bestDirection + secondBestDirection) / 2f, speed * Time.fixedDeltaTime));
+        unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, unit.transform.position + (bestDirection + secondBestDirection) / 2f, usedSpeed * Time.fixedDeltaTime));
     }
 
     public override void UpdateState(Unit unit)
