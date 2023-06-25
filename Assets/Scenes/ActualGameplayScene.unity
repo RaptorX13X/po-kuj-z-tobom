@@ -668,6 +668,7 @@ MonoBehaviour:
   enemiesSpawnPoint: {fileID: 1639942902}
   player: {fileID: 1175742567}
   gameUIManager: {fileID: 1219083908}
+  doorSound: {fileID: 8300000, guid: 4e69d95b6a3c10949972ef23f44d71be, type: 3}
 --- !u!4 &492599036
 Transform:
   m_ObjectHideFlags: 0
@@ -1844,6 +1845,18 @@ PrefabInstance:
       propertyPath: dashDuration
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 6250364863067498904, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
+      propertyPath: damagedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ae3f975ce0d97ae4aaed1df9011b13ad, type: 3}
+    - target: {fileID: 6250364863067498905, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
+      propertyPath: yeetSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a358790f0d4c8e4e9e717c722178bb6, type: 3}
+    - target: {fileID: 6250364863067498910, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
+      propertyPath: pickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 307c90b7668593f418d9adc536c6324e, type: 3}
     - target: {fileID: 6250364863067498911, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
       propertyPath: gameUIManager
       value: 
@@ -1896,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7886017863706609646, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
+      propertyPath: yeetSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a358790f0d4c8e4e9e717c722178bb6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
 --- !u!114 &1175742567 stripped

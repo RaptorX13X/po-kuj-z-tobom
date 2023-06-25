@@ -49,6 +49,7 @@ MonoBehaviour:
   hideDuration: 0.2
   attackRange: 1.75
   attackCollider: {fileID: 938330074792341204}
+  whipSound: {fileID: 8300000, guid: 88fcf68c1347ec14eb3624f15923a872, type: 3}
 --- !u!1 &6520441502946351007
 GameObject:
   m_ObjectHideFlags: 0

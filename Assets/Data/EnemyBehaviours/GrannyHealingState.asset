@@ -15,3 +15,4 @@ MonoBehaviour:
   stateSprite: {fileID: 21300000, guid: 126b2282e04ce74478c16e5cccf0b630, type: 3}
   healingValue: 4
   selfHealingValue: 2
+  dorimeSound: {fileID: 8300000, guid: 09e00adacb21d9e42a33587b46496257, type: 3}
