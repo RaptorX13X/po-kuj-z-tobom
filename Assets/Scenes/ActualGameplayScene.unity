@@ -659,9 +659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 11400000, guid: f941517aab22e12478c9060b8e2d0e12, type: 2}
   - {fileID: 11400000, guid: cdab35af323960e449d909a41ae592cb, type: 2}
   - {fileID: 11400000, guid: 4c868001faf6efb45b1d7c854ad48f7a, type: 2}
-  - {fileID: 11400000, guid: 267a424614f594245b7d3f272f8f0ec1, type: 2}
   enemiesParent: {fileID: 789859327}
   enemiesSpawnPoint: {fileID: 1639942902}
   player: {fileID: 1175742567}
@@ -875,6 +875,65 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &744429839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744429842}
+  - component: {fileID: 744429841}
+  - component: {fileID: 744429840}
+  m_Layer: 0
+  m_Name: Brains
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &744429840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744429839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baf0fb10cf86a44ca4ffbbe4f5c65ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chilinTime: 2
+  chilinTimeVariety: 0.5
+--- !u!114 &744429841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744429839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f80b63a60649024bb9aa6cca97cd079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &744429842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744429839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779694486
 GameObject:
   m_ObjectHideFlags: 0

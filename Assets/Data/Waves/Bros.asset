@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff82ae0c00ead3046ad1b715746d0965, type: 3}
-  m_Name: Wave_0
+  m_Name: Bros
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 154031089489108787, guid: a45a386debc450a4a8ae5c334547ed48, type: 3}
-  delayInSeconds: 1
+  - {fileID: 154031089489108787, guid: d569de737f21fb344b0f078ca360c48b, type: 3}
+  - {fileID: 154031089489108787, guid: d569de737f21fb344b0f078ca360c48b, type: 3}
+  - {fileID: 154031089489108787, guid: d569de737f21fb344b0f078ca360c48b, type: 3}
+  delayInSeconds: 1.5

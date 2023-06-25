@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff82ae0c00ead3046ad1b715746d0965, type: 3}
-  m_Name: Wave_1
+  m_Name: Mom
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
-  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
-  - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
+  - {fileID: 154031089489108787, guid: 0a803b4c238fed6468ff98b40d9a3de2, type: 3}
   delayInSeconds: 1
