@@ -452,7 +452,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6250364863067498983}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -547,6 +547,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   isPlayer: 1
   invincibleTime: 0.1
+  dead: 0
 --- !u!114 &6250364863067498908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa72eccc93e16043a5d059fc1a413ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 5
+  dashSpeed: 5
+  dashDuration: 0.2
   cooldown: 5
 --- !u!1 &6250364864090229127
 GameObject:
