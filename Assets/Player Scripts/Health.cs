@@ -4,22 +4,35 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health;
+    private int currentHealth;
 
     public event Action OnDeath;
     public event Action OnDamaged;
 
-    public int Value => health;
+    public int Value => currentHealth;
+    public float Percent => (float)currentHealth / health;
+
+    private void Awake()
+    {
+        currentHealth = health;
+    }
 
     public void Damage()
     {
-        health -= 1;
+        currentHealth -= 1;
         OnDamaged?.Invoke();
 
-        if (health == 0)
+        if (currentHealth == 0)
         {
             OnDeath?.Invoke();
             if (gameObject.TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false); 
             else Destroy(gameObject);
         }
+    }
+
+    public void Heal(int value)
+    {
+        currentHealth = Mathf.Min(health, currentHealth + value);
+        Debug.Log("Healed!");
     }
 }
