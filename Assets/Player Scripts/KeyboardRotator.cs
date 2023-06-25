@@ -11,6 +11,7 @@ public class KeyboardRotator : MonoBehaviour
     [SerializeField] private Collider2D attackCollider;
     private float timer;
     private bool attackInProgress;
+    [SerializeField] private AudioClip swingSound;
 
     private void Update()
     {
@@ -34,5 +35,6 @@ public class KeyboardRotator : MonoBehaviour
         attackInProgress = true;
         timer = 0;
         attackCollider.enabled = true;
+        AudioManager.instance.PlaySound(swingSound);
     }
 }

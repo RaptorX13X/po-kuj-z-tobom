@@ -246,6 +246,9 @@ MonoBehaviour:
   health: 5
   healthBar: {fileID: 5703912064736113785}
   isPlayer: 0
+  invincibleTime: 0.1
+  dead: 0
+  damagedSound: {fileID: 8300000, guid: ae3f975ce0d97ae4aaed1df9011b13ad, type: 3}
 --- !u!114 &2717646687448837158
 MonoBehaviour:
   m_ObjectHideFlags: 0

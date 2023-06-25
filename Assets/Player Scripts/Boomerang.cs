@@ -15,6 +15,7 @@ public class Boomerang : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float freeFlightDuration;
     private float flightTimer;
+    [SerializeField] private AudioClip throwSound;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -39,6 +40,7 @@ public class Boomerang : MonoBehaviour
         body.velocity = new Vector2(dir.x, dir.y) * velocity;
         collider.enabled = true;
         flightTimer = 0;
+        AudioManager.instance.PlaySound(throwSound);
     }
 
     private void FixedUpdate()

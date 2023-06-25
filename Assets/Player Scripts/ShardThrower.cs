@@ -10,6 +10,7 @@ public class ShardThrower : MonoBehaviour
     [SerializeField] private float vel;
     [SerializeField] private Rigidbody2D playerBody;
     private float timer;
+    [SerializeField] private AudioClip yeetSound;
 
     public void ShardThrow(Vector3 mousePos)
     {
@@ -22,6 +23,7 @@ public class ShardThrower : MonoBehaviour
         var dir = (mousePos - transform.position).normalized;
         missile.GetComponent<Rigidbody2D>().velocity = new Vector2(dir.x, dir.y) * vel;
         missile.transform.up = dir;
+        AudioManager.instance.PlaySound(yeetSound);
     }
 
     private void Update()

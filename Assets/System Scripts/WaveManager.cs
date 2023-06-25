@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Transform enemiesSpawnPoint;
     [SerializeField] private PlayerMenager player;
     [SerializeField] private GameUIManager gameUIManager;
+    [SerializeField] private AudioClip doorSound;
 
     private int currentWave = -1;
 
@@ -31,6 +32,7 @@ public class WaveManager : MonoBehaviour
 
     public void NextWave()
     {
+        AudioManager.instance.PlaySound(doorSound);
         currentWave++;
         player.SetWeapon(PlayerMenager.Weapons.None);
         if (currentWave < waves.Length)

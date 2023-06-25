@@ -133,6 +133,7 @@ MonoBehaviour:
   hideDuration: 0.1
   attackRange: 0
   attackCollider: {fileID: 4436452156946707802}
+  whipSound: {fileID: 8300000, guid: 88fcf68c1347ec14eb3624f15923a872, type: 3}
 --- !u!1 &5859474305903082265
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +549,7 @@ MonoBehaviour:
   isPlayer: 1
   invincibleTime: 0.1
   dead: 0
+  damagedSound: {fileID: 0}
 --- !u!114 &6250364863067498908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +773,7 @@ MonoBehaviour:
   holdDistance: 1.5
   rotationSpeed: 1000
   freeFlightDuration: 1
+  throwSound: {fileID: 8300000, guid: 7a358790f0d4c8e4e9e717c722178bb6, type: 3}
 --- !u!50 &6250364864090229121
 Rigidbody2D:
   serializedVersion: 4
@@ -882,6 +885,7 @@ MonoBehaviour:
   attackDuration: 0.2
   swingAngle: 120
   attackCollider: {fileID: 4478451692419060729}
+  swingSound: {fileID: 8300000, guid: bfa966de69a74ad4d9c1096d85d82602, type: 3}
 --- !u!1 &7476850838258868519
 GameObject:
   m_ObjectHideFlags: 0
