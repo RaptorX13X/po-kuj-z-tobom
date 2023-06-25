@@ -11,6 +11,7 @@ public class GrandpaFightingState : AUnitState
     public override void EnterState(Unit unit)
     {
         GrampsBrain.Instance.SetGrandpa(unit);
+        unit.SpriteRenderer.sprite = stateSprite;
         unit.GetComponentInChildren<GrandpaBattingBehaviour>().ResetCooldown();
     }
 

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7940fd42a2936084383bf812a8d962a7, type: 3}
   m_Name: GrannyHealingState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: 126b2282e04ce74478c16e5cccf0b630, type: 3}
   healingValue: 4
+  selfHealingValue: 2

@@ -11,6 +11,7 @@ public class GrandpaWaitState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         alreadyWaited = 0f;
     }
 

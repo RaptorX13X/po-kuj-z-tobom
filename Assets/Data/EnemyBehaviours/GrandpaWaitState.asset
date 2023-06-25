@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db3a117046acd7438691d2c22a3509b, type: 3}
   m_Name: GrandpaWaitState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: 074db2632a9a4d841a91964a62e1c8eb, type: 3}
   waitingTime: 1.5
   minWaitingTime: 0.25

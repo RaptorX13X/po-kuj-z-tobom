@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a460fbe99dcdec449c46715345019b5, type: 3}
   m_Name: GrandpaFightingState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: f0e50c60f1a618244a0d1c95c16de323, type: 3}
   baseSpeed: 3.5
   maxSpeed: 5.5

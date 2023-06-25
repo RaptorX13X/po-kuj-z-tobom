@@ -7,6 +7,7 @@ public class BoyzInitState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         BoyzBrain.Instance.AddBro(unit);
 
         unit.SwitchState(BoyzRoaminState.StateId);

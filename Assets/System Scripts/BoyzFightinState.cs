@@ -9,6 +9,7 @@ public class BoyzFightinState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         unit.GetComponentInChildren<BatterBehaviour>().ResetCooldown();
     }
 

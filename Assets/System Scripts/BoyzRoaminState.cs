@@ -20,6 +20,7 @@ public class BoyzRoaminState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         usedDistWeight = Random.Range(distanceWeight - 0.3f, distanceWeight + 0.1f);
         usedEnviroRays = Random.Range(8, enviroRays);
         usedSpeed = Random.Range(speed - 1f, speed + 0.5f);

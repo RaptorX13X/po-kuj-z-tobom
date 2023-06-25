@@ -12,6 +12,7 @@ public class BlobChillingState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         remainingChillingTime = Random.Range(chilinTime - chilinTimeVariety, chilinTime + chilinTimeVariety);
     }
 

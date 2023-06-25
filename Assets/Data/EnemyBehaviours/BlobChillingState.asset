@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b92c854b6c52864684263a079c721ea, type: 3}
   m_Name: BlobChillingState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: 9ecf1e80c6434574e959d2dc7677e52b, type: 3}
   chilinTime: 2
   chilinTimeVariety: 0.25

@@ -11,6 +11,7 @@ public class GrannyHealingState : AUnitState
     public override void EnterState(Unit unit)
     {
         var gran = GrampsBrain.Instance.Grandpa;
+        unit.SpriteRenderer.sprite = stateSprite;
         if (gran.gameObject != null)
         {
             gran.GetComponent<Health>().Heal(healingValue);

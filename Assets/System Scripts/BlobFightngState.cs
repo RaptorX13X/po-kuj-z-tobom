@@ -15,6 +15,7 @@ public class BlobFightngState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         if (Vector2.Distance(unit.transform.position, unit.PlayerReference.transform.position) > jumpDistance)
             targetPosition = unit.transform.position + Quaternion.AngleAxis(Random.Range(-angleMaxDistortion, angleMaxDistortion), Vector3.forward) * (unit.PlayerReference.transform.position - unit.transform.position).normalized * Random.Range(jumpDistance - distanceMaxDistortion, jumpDistance + distanceMaxDistortion);
         else

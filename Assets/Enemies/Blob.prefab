@@ -37,11 +37,19 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 771e1ed7d2c1ab14fa1617acdee51bbc, type: 2}
     - target: {fileID: 4985415461214661413, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.14
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719371763857269330, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 5911280753083692810, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_Name
       value: Blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880406926021727056, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_Radius
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7565112958484540639, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_RootOrder
@@ -112,6 +120,22 @@ PrefabInstance:
       value: 0.20121038
       objectReference: {fileID: 0}
     - target: {fileID: 7641334758266737494, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668443431484701800, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668443431484701800, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668443431484701800, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ecf1e80c6434574e959d2dc7677e52b, type: 3}
+    - target: {fileID: 7668443431484701800, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
