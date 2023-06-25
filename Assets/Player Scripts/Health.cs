@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
     [SerializeField] private int health;
     private int currentHealth;
     [SerializeField] private EnemyHealthbar healthBar;
@@ -48,10 +47,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            OnDeath?.Invoke();
-            if (gameObject.TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false); 
-            else Destroy(gameObject);
-            dead = true;
+            Kill();
         }
     }
 
@@ -60,5 +56,13 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Min(health, currentHealth + value);
         if (!isPlayer)
             healthBar.SetHealth(currentHealth);
+    }
+
+    public void Kill()
+    {
+        OnDeath?.Invoke();
+        if (gameObject.TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false);
+        else Destroy(gameObject);
+        dead = true;
     }
 }

@@ -7,7 +7,7 @@ public sealed class GrampsBrain : MonoBehaviour
     private Unit granny;
     private Health grannyHealth;
 
-    public float GrannyHealhtPercent => grannyHealth.gameObject != null ? grannyHealth.Percent : 0f;
+    public float GrannyHealhtPercent => grannyHealth != null ? grannyHealth.Percent : 0f;
     public Unit Grandpa => gramp;
     public static GrampsBrain Instance = null;
 

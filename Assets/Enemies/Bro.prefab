@@ -228,6 +228,7 @@ MonoBehaviour:
   attackDuration: 0.2
   swingAngle: 120
   attackCollider: {fileID: 5805925172822520382}
+  swingSound: {fileID: 8300000, guid: bfa966de69a74ad4d9c1096d85d82602, type: 3}
 --- !u!114 &8721768668766473265
 MonoBehaviour:
   m_ObjectHideFlags: 0

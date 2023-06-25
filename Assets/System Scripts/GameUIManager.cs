@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +12,23 @@ public class GameUIManager : MonoBehaviour
     private bool playing;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameplayMusicManager gameplayMusicManager;
+
     public bool Playing => playing;
+    [SerializeField] private AudioClip victory;
+    [SerializeField] private AudioClip loss;
+    private float timeElapsed;
+    [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private TextMeshProUGUI victorySpeech;
+    
     private void Awake()
     {
         pauseScreen.SetActive(false);
         victoryScreen.SetActive(false);
         deathScreen.SetActive(false);
         playing = true;
+        timeElapsed = 0;
     }
 
     private void Pause()
@@ -38,6 +50,10 @@ public class GameUIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             Pause();
+        timeElapsed += Time.deltaTime;
+        TimeSpan timeCounter = TimeSpan.FromSeconds(timeElapsed);
+        timer.text = timeCounter.ToString("mm':'ss");
+        victorySpeech.text = "You have beaten the grass touchers in "+ timer.text + " minutes!";
     }
 
     public void DisplayLoseScreen()
@@ -45,6 +61,9 @@ public class GameUIManager : MonoBehaviour
         deathScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
+
+        audioManager.StopAllSounds();
+        AudioManager.instance.PlaySound(loss);
     }
 
     public void DisplayVictoryScreen()
@@ -52,15 +71,20 @@ public class GameUIManager : MonoBehaviour
         victoryScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
+        audioManager.StopAllSounds();
+        AudioManager.instance.PlaySound(victory);
+        timer.GameObject().SetActive(false);
     }
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void Retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
