@@ -5,6 +5,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health;
     private int currentHealth;
+    [SerializeField] private EnemyHealthbar healthBar;
+    [SerializeField] private bool isPlayer;
 
     public event Action OnDeath;
     public event Action OnDamaged;
@@ -15,12 +17,16 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = health;
+        if (!isPlayer)
+            healthBar.SetMaxHealth(health);
     }
 
     public void Damage()
     {
         currentHealth -= 1;
         OnDamaged?.Invoke();
+        if (!isPlayer)
+            healthBar.SetHealth(currentHealth);
 
         if (currentHealth == 0)
         {
@@ -33,6 +39,8 @@ public class Health : MonoBehaviour
     public void Heal(int value)
     {
         currentHealth = Mathf.Min(health, currentHealth + value);
+        if (!isPlayer)
+            healthBar.SetHealth(currentHealth);
         Debug.Log("Healed!");
     }
 }
