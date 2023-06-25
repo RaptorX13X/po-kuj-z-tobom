@@ -21,9 +21,9 @@ public class BoyzRoaminState : AUnitState
     public override void EnterState(Unit unit)
     {
         usedDistWeight = Random.Range(distanceWeight - 0.3f, distanceWeight + 0.1f);
-        usedEnviroRays = Random.Range(8, usedEnviroRays);
+        usedEnviroRays = Random.Range(8, enviroRays);
         usedSpeed = Random.Range(speed - 1f, speed + 0.5f);
-        usedRoamingRadius = Random.Range(usedRoamingRadius, usedRoamingRadius + 1f);
+        usedRoamingRadius = Random.Range(usedRoamingRadius, roamingRadius + 1f);
     }
 
     public override void FixedUpdateState(Unit unit)

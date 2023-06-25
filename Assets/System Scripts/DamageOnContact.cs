@@ -28,6 +28,14 @@ public class DamageOnContact : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (timeToNextDamageDeal <= 0f)
+        {
+            DealDamageOnPlayerCollision(collision.collider);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (timeToNextDamageDeal <= 0f)

@@ -2,8 +2,6 @@
 // Singleton class
 public sealed class GrampsBrain : MonoBehaviour
 {
-    [SerializeField] private float chilinTime = 2f;
-    [SerializeField] private float chilinTimeVariety = 0.5f;
 
     private Unit gramp;
     private Unit granny;

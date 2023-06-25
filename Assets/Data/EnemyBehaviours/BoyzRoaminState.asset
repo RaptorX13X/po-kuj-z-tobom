@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e07c7434681844cb90f426e4ef329b, type: 3}
   m_Name: BoyzRoaminState
   m_EditorClassIdentifier: 
-  roamingRadius: 6
+  stateSprite: {fileID: 0}
+  roamingRadius: 5
   speed: 4
   enviroRays: 36
   layerMask:
