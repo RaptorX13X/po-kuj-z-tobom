@@ -41,6 +41,5 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Min(health, currentHealth + value);
         if (!isPlayer)
             healthBar.SetHealth(currentHealth);
-        Debug.Log("Healed!");
     }
 }
