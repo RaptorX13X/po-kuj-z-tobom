@@ -12,7 +12,7 @@ public class GrannyHealingState : AUnitState
     {
         var gran = GrampsBrain.Instance.Grandpa;
         unit.SpriteRenderer.sprite = stateSprite;
-        if (gran.gameObject != null)
+        if (gran != null)
         {
             gran.GetComponent<Health>().Heal(healingValue);
         }

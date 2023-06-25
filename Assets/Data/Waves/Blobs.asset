@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
   - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
   - {fileID: 154031089489108787, guid: e20300a62f73c96498c63b2ed0938f1a, type: 3}
-  delayInSeconds: 1
+  delayInSeconds: 2
