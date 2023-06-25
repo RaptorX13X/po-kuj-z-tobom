@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour
 
     public PlayerMenager PlayerReference => waveManager.Player;
     public Rigidbody2D Rigidbody2D => rb;
+    public AUnitState CurrentState => currentState;
 
     public void Init(WaveManager waveManager)
     {
