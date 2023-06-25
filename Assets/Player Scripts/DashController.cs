@@ -11,6 +11,7 @@ public class DashController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D playerCollider;
 
+    [SerializeField] private AudioClip dashSound;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,5 +48,6 @@ public class DashController : MonoBehaviour
         Vector2 difference = (input == Vector2.zero) ? (mousePosition - transform.position).normalized : input.normalized;
         rb.velocity = difference * dashSpeed;
         dashing = true;
+        AudioManager.instance.PlaySound(dashSound);
     }
 }
