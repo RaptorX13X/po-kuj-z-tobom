@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220c945292baf564c90d1d9b580e1a91, type: 3}
-  m_Name: DadChasingState
+  m_Script: {fileID: 11500000, guid: ff82ae0c00ead3046ad1b715746d0965, type: 3}
+  m_Name: Wave_3
   m_EditorClassIdentifier: 
-  speed: 4.5
-  knockbackForce: 7.5
+  units:
+  - {fileID: 154031089489108787, guid: 0a803b4c238fed6468ff98b40d9a3de2, type: 3}
+  delayInSeconds: 1

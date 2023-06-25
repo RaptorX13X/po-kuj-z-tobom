@@ -30,7 +30,7 @@ public class WaveManager : MonoBehaviour
     public void NextWave()
     {
         currentWave++;
-
+        player.SetWeapon(PlayerMenager.Weapons.None);
         if (currentWave < waves.Length)
         {
             CleanRoom();

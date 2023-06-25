@@ -9,6 +9,7 @@ public class Klapek : MonoBehaviour
     private Vector2 target;
     private Rigidbody2D rb;
     private Unit thrower;
+    private GameObject throwerObject;
 
     private bool returning = false;
 
@@ -18,6 +19,7 @@ public class Klapek : MonoBehaviour
 
         this.thrower = thrower;
         this.target = target;
+        throwerObject = thrower.gameObject;
     }
 
     private void Update()
@@ -39,7 +41,7 @@ public class Klapek : MonoBehaviour
         }
         else
         {
-            if (thrower.gameObject == null)
+            if (throwerObject == null)
             {
                 Destroy(gameObject);
                 return;

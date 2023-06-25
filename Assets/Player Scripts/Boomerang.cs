@@ -21,17 +21,9 @@ public class Boomerang : MonoBehaviour
         
         if (other.gameObject.TryGetComponent(out PlayerMenager playerMenager))
         {
-            Debug.Log("returned");
             collider.enabled = false;
             ready = true;
             body.velocity = Vector2.zero;
-        }
-        else
-        {
-            if (!ready)
-            {
-                if(other.gameObject.TryGetComponent(out Health health)) health.Damage();
-            }
         }
     }
 

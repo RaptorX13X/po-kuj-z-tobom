@@ -71,7 +71,6 @@ public class PlayerMenager : MonoBehaviour
         if (input == Vector2.zero) return;
 
         float angle = Vector2.SignedAngle(Vector2.up, input);
-        Debug.Log(angle);
         if (angle > -45 && angle <= 45) animator.SetInteger("WalkDir", 0);
         else if (angle > 45 && angle <= 135) animator.SetInteger("WalkDir", 3);
         else if (angle > 135 || angle <= -135) animator.SetInteger("WalkDir", 2);
