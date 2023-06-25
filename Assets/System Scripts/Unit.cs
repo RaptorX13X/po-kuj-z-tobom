@@ -57,6 +57,7 @@ public class Unit : MonoBehaviour
     private void Die()
     {
         waveManager.EnemiesAlive--;
+        Debug.Log(waveManager.EnemiesAlive);
         Destroy(gameObject);
     }
 }

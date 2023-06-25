@@ -17,8 +17,6 @@ public class WaveManager : MonoBehaviour
     public Vector2 EnemiesSpawnPoint => enemiesSpawnPoint.position;
     public PlayerMenager Player => player;
 
-    public bool GameStarted;
-
     private void Start()
     {
         player.GetComponent<Health>().OnDeath += DisplayLoseScreen;
@@ -26,11 +24,14 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameStarted) return;
-
         if (EnemiesAlive == 0)
         {
             player.SetWeapon(PlayerMenager.Weapons.None);
+            if (currentWave >= waves.Length-1)
+            {
+                DisplayWinScreen();
+                gameFinished = true;
+            }
         }
     }
 
@@ -39,18 +40,10 @@ public class WaveManager : MonoBehaviour
         if (gameFinished)
             return;
 
-        AudioManager.instance.PlaySound(doorSound);
         currentWave++;
-        if (currentWave < waves.Length)
-        {
-            CleanRoom();
-            waves[currentWave].StartWave(this);
-        }
-        else
-        {
-            DisplayWinScreen();
-            gameFinished = true;
-        }
+        AudioManager.instance.PlaySound(doorSound);
+        CleanRoom();
+        waves[currentWave].StartWave(this);
     }
 
     private void CleanRoom()
