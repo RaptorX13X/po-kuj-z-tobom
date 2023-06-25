@@ -10,7 +10,7 @@ public class KeyboardRotator : MonoBehaviour
     private bool swingRight;
     [SerializeField] private Collider2D attackCollider;
     private float timer;
-    private bool attackInProgress;
+    public bool attackInProgress;
     [SerializeField] private AudioClip swingSound;
 
     private void Update()

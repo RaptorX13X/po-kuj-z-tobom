@@ -313,6 +313,7 @@ MonoBehaviour:
   attackDuration: 0.2
   swingAngle: 120
   attackCollider: {fileID: 5805925172822520382}
+  attackInProgress: 0
   swingSound: {fileID: 8300000, guid: bfa966de69a74ad4d9c1096d85d82602, type: 3}
 --- !u!114 &8721768668766473265
 MonoBehaviour:
@@ -330,6 +331,8 @@ MonoBehaviour:
   distanceToAttackPlayer: 2
   unit: {fileID: 154031089489108787}
   keyboarder: {fileID: 9030133294566932893}
+  canned: {fileID: 21300000, guid: c79a5fba083987e4b89d81a54ed3a2dc, type: 3}
+  sprdr: {fileID: 2384096000749661163}
 --- !u!1001 &3131890805268388031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -356,6 +359,14 @@ PrefabInstance:
     - target: {fileID: -8702661904317448425, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524516912764811763, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524516912764811763, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2978441131543021452, guid: b4adb8ed2e8d3c84f8effcf641319815, type: 3}
       propertyPath: possibleStates.Array.size

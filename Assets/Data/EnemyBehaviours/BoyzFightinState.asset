@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b13f4ddcbb66143b7aad3c4a24cf44, type: 3}
   m_Name: BoyzFightinState
   m_EditorClassIdentifier: 
-  stateSprite: {fileID: 21300000, guid: c79a5fba083987e4b89d81a54ed3a2dc, type: 3}
+  stateSprite: {fileID: 21300000, guid: 9449cfe8e84adb14982b272885f7f929, type: 3}
   speed: 3.5

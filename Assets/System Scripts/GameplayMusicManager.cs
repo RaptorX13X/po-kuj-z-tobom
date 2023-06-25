@@ -48,4 +48,11 @@ public class GameplayMusicManager : MonoBehaviour
             nextClipScheduledTime += loopDuration;
         }
     }
+
+    public void StopAll()
+    {
+        musicIntro.Stop();
+        musicLoopA.Stop();
+        musicLoopB.Stop();
+    }
 }

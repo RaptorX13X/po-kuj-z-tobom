@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     private AudioSource source;
-    [SerializeField] private GameObject musicSources;
+    [SerializeField] private GameplayMusicManager musicSources;
     private void Awake()
     {
         instance = this;
@@ -22,6 +22,6 @@ public class AudioManager : MonoBehaviour
     public void StopAllSounds()
     {
         source.Stop();
-        musicSources.SetActive(false);
+        musicSources.StopAll();
     }
 }

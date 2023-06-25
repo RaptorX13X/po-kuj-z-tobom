@@ -8,7 +8,6 @@ public class GrandpaWaitState : AUnitState
     [SerializeField] private float waitingTime = 1.5f;
     [SerializeField] private float minWaitingTime = 0.25f;
     private float alreadyWaited;
-
     public override void EnterState(Unit unit)
     {
         unit.SpriteRenderer.sprite = stateSprite;
@@ -23,7 +22,6 @@ public class GrandpaWaitState : AUnitState
     public override void UpdateState(Unit unit)
     {
         alreadyWaited += Time.deltaTime;
-
         if (alreadyWaited >= GrampsBrain.Instance.GrandpaScaling(waitingTime, minWaitingTime))
         {
             unit.SwitchState(GrandpaFightingState.StateId);

@@ -6,6 +6,8 @@ public class BatterBehaviour : MonoBehaviour
     [SerializeField] private float distanceToAttackPlayer = 2.0f;
     [SerializeField] private Unit unit;
     [SerializeField] private KeyboardRotator keyboarder;
+    [SerializeField] private Sprite canned;
+    [SerializeField] private SpriteRenderer sprdr;
 
     private float activeCooldown = 0f;
     private Transform target;
@@ -24,8 +26,14 @@ public class BatterBehaviour : MonoBehaviour
             activeCooldown = cooldown;
 
             keyboarder.StartAttack(target.position);
-
+            sprdr.enabled = true;
             unit.SwitchState(BoyzRoaminState.StateId);
+        }
+
+        if (!keyboarder.attackInProgress)
+        {
+            sprdr.enabled = false;
+            unit.SpriteRenderer.sprite = canned;
         }
     }
 
