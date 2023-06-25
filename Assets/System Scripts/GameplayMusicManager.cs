@@ -55,4 +55,11 @@ public class GameplayMusicManager : MonoBehaviour
         musicLoopA.Stop();
         musicLoopB.Stop();
     }
+
+    public void SkipToLoop()
+    {
+        StopAll();
+        nextClipScheduledTime = AudioSettings.dspTime + bufferSeconds;
+        introFinish = true;
+    }
 }

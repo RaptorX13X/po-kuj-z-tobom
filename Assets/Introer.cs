@@ -18,7 +18,6 @@ public class Introer : MonoBehaviour
     }
     [SerializeField] private GameUIManager guim;
     [SerializeField] private List<introElement> elements;
-
     private float timer;
 
     private void Awake()
@@ -57,6 +56,4 @@ public class Introer : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
 }
