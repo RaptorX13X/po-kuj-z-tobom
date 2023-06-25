@@ -1844,6 +1844,10 @@ PrefabInstance:
       propertyPath: dashDuration
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 6250364863067498911, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
+      propertyPath: gameUIManager
+      value: 
+      objectReference: {fileID: 1219083908}
     - target: {fileID: 6250364863067498976, guid: a58ecdb53b6a772418e5be3ee70bee62, type: 3}
       propertyPath: m_RootOrder
       value: 3

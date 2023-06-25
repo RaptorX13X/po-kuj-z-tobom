@@ -10,7 +10,7 @@ public class GameUIManager : MonoBehaviour
     private bool playing;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject deathScreen;
-
+    public bool Playing => playing;
     private void Awake()
     {
         pauseScreen.SetActive(false);

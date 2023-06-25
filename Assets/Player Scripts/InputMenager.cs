@@ -9,6 +9,7 @@ public class InputMenager : MonoBehaviour
     public bool action { private set; get; }
     public Vector3 mousePos;
     public bool dashPressed;
+    [SerializeField] private GameUIManager gameUIManager;
 
     private void Update()
     {
@@ -17,6 +18,12 @@ public class InputMenager : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         dashPressed = dashPressed || Input.GetKeyDown(KeyCode.Space);
+        if(!gameUIManager.Playing)
+        {
+            input = Vector2.zero;
+            action = false;
+            dashPressed = false;
+        }
     }
 
 }
