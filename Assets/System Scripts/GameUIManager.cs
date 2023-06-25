@@ -10,6 +10,9 @@ public class GameUIManager : MonoBehaviour
     private bool playing;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameplayMusicManager gameplayMusicManager;
+
     public bool Playing => playing;
     private void Awake()
     {
@@ -45,6 +48,9 @@ public class GameUIManager : MonoBehaviour
         deathScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
+
+        audioManager.gameObject.SetActive(false);
+        gameplayMusicManager.gameObject.SetActive(false);
     }
 
     public void DisplayVictoryScreen()
@@ -52,6 +58,9 @@ public class GameUIManager : MonoBehaviour
         victoryScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
+
+        audioManager.gameObject.SetActive(false);
+        gameplayMusicManager.gameObject.SetActive(false);
     }
 
     public void MainMenu()
