@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220c945292baf564c90d1d9b580e1a91, type: 3}
   m_Name: DadChasingState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: cfc267e03d7a82d488e6a619501751a0, type: 3}
   speed: 4.5
   knockbackForce: 7.5

@@ -10,6 +10,7 @@ public class MomFightngState : AUnitState
     [SerializeField] private LayerMask layerMask;
     [SerializeField, Range(0f, 1f)] private float distanceWeight = 0.8f;
     [SerializeField] private Klapek klapekPrefab;
+    [SerializeField] private Sprite noKlapekSprite;
     private float distanceToFlip = 3f;
     private float distanceTraveled = 0;
     private Vector2 lastPosition = Vector2.one * 9999;
@@ -19,6 +20,7 @@ public class MomFightngState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
         canThrow = true;
     }
 
@@ -77,6 +79,7 @@ public class MomFightngState : AUnitState
             canThrow = false;
             Klapek klapklap = Instantiate(klapekPrefab, unit.transform.position, Quaternion.identity);
             klapklap.Init(unit, unit.PlayerReference.transform.position);
+            unit.SpriteRenderer.sprite = noKlapekSprite;
         }
     }
 

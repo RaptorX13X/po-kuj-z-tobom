@@ -14,7 +14,7 @@ public class DadChasingState : AUnitState
 
     public override void EnterState(Unit unit)
     {
-        // Nothing
+        unit.SpriteRenderer.sprite = stateSprite;
     }
 
     public override void FixedUpdateState(Unit unit)

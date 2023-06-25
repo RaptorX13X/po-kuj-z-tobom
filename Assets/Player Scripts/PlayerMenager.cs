@@ -82,10 +82,10 @@ public class PlayerMenager : MonoBehaviour
         switch (activeWeapon)
         {
             case Weapons.Shard:
-                shart.gameObject.SetActive(false);
+                shart.enabled = false;
                 break;
             case Weapons.Pillow:
-                pillow.gameObject.SetActive(false);
+                pillow.enabled = false;
                 break;
             case Weapons.Blanket:
                 blankieController.gameObject.SetActive(false);
@@ -103,10 +103,10 @@ public class PlayerMenager : MonoBehaviour
         switch (activeWeapon)
         {
             case Weapons.Shard:
-                shart.gameObject.SetActive(true);
+                shart.enabled = true;
                 break;
             case Weapons.Pillow:
-                pillow.gameObject.SetActive(true);
+                pillow.enabled = true;
                 break;
             case Weapons.Blanket:
                 blankieController.gameObject.SetActive(true);

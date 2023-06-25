@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c45b3f988a2cf24db68074e623d5c60, type: 3}
   m_Name: MomFightngState
   m_EditorClassIdentifier: 
+  stateSprite: {fileID: 21300000, guid: 916c0f0d674e8a64d9ab934b5261dbcf, type: 3}
   speed: 4
   enviroRays: 36
   layerMask:
@@ -19,3 +20,4 @@ MonoBehaviour:
     m_Bits: 256
   distanceWeight: 0.8
   klapekPrefab: {fileID: 5606488942091966486, guid: 65461b70e8801a549835bf3fc672520c, type: 3}
+  noKlapekSprite: {fileID: 21300000, guid: 9b1f9a07e24dd554193731f30d92ef4b, type: 3}

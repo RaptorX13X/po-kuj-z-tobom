@@ -10,6 +10,8 @@ public class DadBeltState : AUnitState
 
     public override void EnterState(Unit unit)
     {
+        unit.SpriteRenderer.sprite = stateSprite;
+
         remainingBeltingTime = beltingTime;
 
         unit.GetComponentInChildren<BlankieController>().StartAttack(unit.PlayerReference.transform.position);
