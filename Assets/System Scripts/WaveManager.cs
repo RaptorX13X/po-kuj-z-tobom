@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private Transform enemiesSpawnPoint;
     [SerializeField] private PlayerMenager player;
+    [SerializeField] private GameUIManager gameUIManager;
 
     private int currentWave = -1;
 
@@ -14,12 +15,10 @@ public class WaveManager : MonoBehaviour
     public Vector2 EnemiesSpawnPoint => enemiesSpawnPoint.position;
     public PlayerMenager Player => player;
 
-    public bool victory;
 
     private void Start()
     {
         player.GetComponent<Health>().OnDeath += DisplayLoseScreen;
-        victory = false;
     }
 
     private void Update()
@@ -41,7 +40,6 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            victory = true;
             DisplayWinScreen();
         }
     }
@@ -54,10 +52,12 @@ public class WaveManager : MonoBehaviour
     private void DisplayWinScreen()
     {
         Debug.Log("You won!!");
+        gameUIManager.DisplayVictoryScreen();
     }
 
     private void DisplayLoseScreen()
     {
         Debug.Log("You lost!!");
+        gameUIManager.DisplayLoseScreen();
     }
 }

@@ -34,7 +34,6 @@ public class DashController : MonoBehaviour
                 rb.velocity = rb.velocity.normalized * dashSpeed;
             }
         }
-        
     }
 
     public void TryApplyDash(Vector3 mousePosition, Vector2 input)

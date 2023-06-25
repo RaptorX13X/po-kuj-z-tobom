@@ -10,8 +10,6 @@ public class GameUIManager : MonoBehaviour
     private bool playing;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject deathScreen;
-    [SerializeField] private Health player;
-    [SerializeField] private WaveManager waveManager;
 
     private void Awake()
     {
@@ -40,22 +38,19 @@ public class GameUIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             Pause();
-        if(player.dead)
-            Death();
-        if(waveManager.victory)
-            Victory();
-        
     }
 
-    private void Death()
+    public void DisplayLoseScreen()
     {
         deathScreen.SetActive(true);
+        Time.timeScale = 0f;
         playing = false;
     }
 
-    private void Victory()
+    public void DisplayVictoryScreen()
     {
         victoryScreen.SetActive(true);
+        Time.timeScale = 0f;
         playing = false;
     }
 
