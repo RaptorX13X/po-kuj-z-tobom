@@ -68,6 +68,8 @@ public class PlayerMenager : MonoBehaviour
 
     private void SetAnim(Vector2 input)
     {
+        if (input == Vector2.zero) return;
+
         float angle = Vector2.SignedAngle(Vector2.up, input);
         Debug.Log(angle);
         if (angle > -45 && angle <= 45) animator.SetInteger("WalkDir", 0);
