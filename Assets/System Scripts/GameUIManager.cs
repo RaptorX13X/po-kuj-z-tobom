@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private AudioClip loss;
     private float timeElapsed;
     [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private TextMeshProUGUI victorySpeech;
     
     private void Awake()
     {
@@ -51,6 +53,7 @@ public class GameUIManager : MonoBehaviour
         timeElapsed += Time.deltaTime;
         TimeSpan timeCounter = TimeSpan.FromSeconds(timeElapsed);
         timer.text = timeCounter.ToString("mm':'ss");
+        victorySpeech.text = "You have beaten the grass touchers in "+ timer.text + " minutes!";
     }
 
     public void DisplayLoseScreen()
@@ -68,9 +71,9 @@ public class GameUIManager : MonoBehaviour
         victoryScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
-
         audioManager.StopAllSounds();
         AudioManager.instance.PlaySound(victory);
+        timer.GameObject().SetActive(false);
     }
 
     public void MainMenu()
