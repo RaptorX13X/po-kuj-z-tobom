@@ -1780,6 +1780,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6322764506472180578, guid: 7f8079f678ae52346afc56b7999c04d5, type: 3}
+      propertyPath: loopDuration
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322764506472180578, guid: 7f8079f678ae52346afc56b7999c04d5, type: 3}
+      propertyPath: introDuration
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6322764506472180579, guid: 7f8079f678ae52346afc56b7999c04d5, type: 3}
       propertyPath: m_Name
       value: GameplayMusic

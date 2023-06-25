@@ -9,37 +9,43 @@ public class GameplayMusicManager : MonoBehaviour
     [SerializeField] private AudioSource musicLoopB;
     [SerializeField] private float introDuration;
     [SerializeField] private float loopDuration;
-
+    private double nextClipScheduledTime;
+    private double DSPTime;
+    private double bufferSeconds = 1d;
     private bool introFinish;
     private bool playingA;
-    private float timer = 0;
-    private float timerToCheck;
-    void Start()
+    private bool firstUpdate = true;
+    private void Start()
     {
-        musicIntro.Play();
-        timerToCheck = introDuration;
+        nextClipScheduledTime = AudioSettings.dspTime + bufferSeconds;
     }
-
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer >= timerToCheck)
-        {
-            timer = 0;
+        DSPTime = AudioSettings.dspTime;
 
+        if (DSPTime > nextClipScheduledTime - bufferSeconds)
+        {
             if (!introFinish)
             {
+                if (firstUpdate)
+                {
+                    firstUpdate = false;
+                    musicIntro.PlayScheduled(nextClipScheduledTime);
+                    nextClipScheduledTime += introDuration;
+                    return;
+                }
+
                 introFinish = true;
                 playingA = true;
-                musicLoopA.Play();
-                timerToCheck = loopDuration;
+                musicLoopA.PlayScheduled(nextClipScheduledTime);
+                nextClipScheduledTime += loopDuration;
                 return;
             }
 
-            if (playingA) musicLoopB.Play();
-            else musicLoopA.Play();
-
+            AudioSource sourceToPlay = playingA ? musicLoopB : musicLoopA;
+            sourceToPlay.PlayScheduled(nextClipScheduledTime);
             playingA = !playingA;
+            nextClipScheduledTime += loopDuration;
         }
     }
 }
