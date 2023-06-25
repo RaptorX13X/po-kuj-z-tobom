@@ -10,6 +10,9 @@ public class MomFightngState : AUnitState
     [SerializeField] private LayerMask layerMask;
     [SerializeField, Range(0f, 1f)] private float distanceWeight = 0.8f;
     [SerializeField] private Klapek klapekPrefab;
+    private float distanceToFlip = 3f;
+    private float distanceTraveled = 0;
+    private Vector2 lastPosition = Vector2.one * 9999;
 
     private Vector3 lastDirection;
     private bool canThrow;
@@ -51,6 +54,19 @@ public class MomFightngState : AUnitState
         }
         lastDirection = bestDirection;
         unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, unit.transform.position + (bestDirection + secondBestDirection) / 2f, speed * Time.fixedDeltaTime));
+        
+        if(lastPosition == Vector2.one * 9999)
+        {
+            lastPosition = unit.Rigidbody2D.position;
+            return;
+        }
+        distanceTraveled += (unit.Rigidbody2D.position - lastPosition).magnitude;
+        lastPosition = unit.Rigidbody2D.position;
+        if (distanceTraveled >= distanceToFlip)
+        {
+            distanceTraveled = 0;
+            unit.SpriteRenderer.flipX = !unit.SpriteRenderer.flipX;
+        }
     }
 
     public override void UpdateState(Unit unit)

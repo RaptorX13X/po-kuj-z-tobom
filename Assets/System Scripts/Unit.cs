@@ -4,13 +4,14 @@
 public class Unit : MonoBehaviour
 {
     [SerializeField] private AUnitState[] possibleStates;
-
     private AUnitState currentState;
     private WaveManager waveManager;
     private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer sR;
 
     public PlayerMenager PlayerReference => waveManager.Player;
     public Rigidbody2D Rigidbody2D => rb;
+    public SpriteRenderer SpriteRenderer => sR;
 
     public void Init(WaveManager waveManager)
     {

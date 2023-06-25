@@ -18,8 +18,7 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             OnDeath?.Invoke();
-            Debug.Log("DEATH");
-            if (TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false); 
+            if (gameObject.TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false); 
             else Destroy(gameObject);
         }
     }
