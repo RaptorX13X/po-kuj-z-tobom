@@ -17,3 +17,7 @@ MonoBehaviour:
   jumpSpeed: 10
   angleMaxDistortion: 25
   distanceMaxDistortion: 0.5
+  hopClips:
+  - {fileID: 8300000, guid: 117bd93501334bb4a9e1313a93d2dca1, type: 3}
+  - {fileID: 8300000, guid: 5f2b7afbb89b1954e83fa8bbf0b06a42, type: 3}
+  - {fileID: 8300000, guid: 32b4aa980b2445e4aa8e936315a02e3c, type: 3}

@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     private AudioSource source;
-
+    [SerializeField] private GameObject musicSources;
     private void Awake()
     {
         instance = this;
@@ -17,5 +17,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(AudioClip _sound)
     {
         source.PlayOneShot(_sound);
+    }
+
+    public void StopAllSounds()
+    {
+        source.Stop();
+        musicSources.SetActive(false);
     }
 }

@@ -50,23 +50,21 @@ public class GameUIManager : MonoBehaviour
     public void DisplayLoseScreen()
     {
         deathScreen.SetActive(true);
-        AudioManager.instance.PlaySound(loss);
         Time.timeScale = 0f;
         playing = false;
 
-        audioManager.gameObject.SetActive(false);
-        gameplayMusicManager.gameObject.SetActive(false);
+        audioManager.StopAllSounds();
+        AudioManager.instance.PlaySound(loss);
     }
 
     public void DisplayVictoryScreen()
     {
         victoryScreen.SetActive(true);
-        AudioManager.instance.PlaySound(victory);
         Time.timeScale = 0f;
         playing = false;
 
-        audioManager.gameObject.SetActive(false);
-        gameplayMusicManager.gameObject.SetActive(false);
+        audioManager.StopAllSounds();
+        AudioManager.instance.PlaySound(victory);
     }
 
     public void MainMenu()
