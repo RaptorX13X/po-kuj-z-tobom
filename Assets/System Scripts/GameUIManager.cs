@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,8 @@ public class GameUIManager : MonoBehaviour
     public bool Playing => playing;
     [SerializeField] private AudioClip victory;
     [SerializeField] private AudioClip loss;
-    
+    private float timeElapsed;
+    [SerializeField] private TextMeshProUGUI timer;
     
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class GameUIManager : MonoBehaviour
         victoryScreen.SetActive(false);
         deathScreen.SetActive(false);
         playing = true;
+        timeElapsed = 0;
     }
 
     private void Pause()
@@ -45,6 +48,9 @@ public class GameUIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             Pause();
+        timeElapsed += Time.deltaTime;
+        TimeSpan timeCounter = TimeSpan.FromSeconds(timeElapsed);
+        timer.text = timeCounter.ToString("mm':'ss");
     }
 
     public void DisplayLoseScreen()
