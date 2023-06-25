@@ -2683,8 +2683,10 @@ MonoBehaviour:
   pauseScreen: {fileID: 7231616034879427325}
   victoryScreen: {fileID: 7835146666930938114}
   deathScreen: {fileID: 4565305537192756634}
+  audioManager: {fileID: 0}
+  gameplayMusicManager: {fileID: 0}
   victory: {fileID: 8300000, guid: 97d83fa94e0c615478621d97f39716c0, type: 3}
-  loss: {fileID: 8300000, guid: 9ae38de81ae05a040a26c15397b790f8, type: 3}
+  loss: {fileID: 8300000, guid: 72796ab47fb470740af140ed4c489ad7, type: 3}
 --- !u!1 &7231616034879427325
 GameObject:
   m_ObjectHideFlags: 0
