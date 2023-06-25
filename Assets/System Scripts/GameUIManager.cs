@@ -10,6 +10,9 @@ public class GameUIManager : MonoBehaviour
     private bool playing;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameplayMusicManager gameplayMusicManager;
+
     public bool Playing => playing;
     [SerializeField] private AudioClip victory;
     [SerializeField] private AudioClip loss;
@@ -50,6 +53,9 @@ public class GameUIManager : MonoBehaviour
         AudioManager.instance.PlaySound(loss);
         Time.timeScale = 0f;
         playing = false;
+
+        audioManager.gameObject.SetActive(false);
+        gameplayMusicManager.gameObject.SetActive(false);
     }
 
     public void DisplayVictoryScreen()
@@ -58,6 +64,9 @@ public class GameUIManager : MonoBehaviour
         AudioManager.instance.PlaySound(victory);
         Time.timeScale = 0f;
         playing = false;
+
+        audioManager.gameObject.SetActive(false);
+        gameplayMusicManager.gameObject.SetActive(false);
     }
 
     public void MainMenu()
