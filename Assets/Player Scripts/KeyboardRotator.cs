@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KeyboardRotator : MonoBehaviour
@@ -25,9 +26,11 @@ public class KeyboardRotator : MonoBehaviour
             attackCollider.enabled = false;
         }
     }
-    public void StartAttack()
+    public void StartAttack(Vector3 mousePos)
     {
         if (attackInProgress) return;
+
+        transform.parent.up = (mousePos - transform.position).normalized;
         attackInProgress = true;
         timer = 0;
         attackCollider.enabled = true;

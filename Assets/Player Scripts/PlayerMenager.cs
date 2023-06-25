@@ -49,7 +49,7 @@ public class PlayerMenager : MonoBehaviour
                     actionCooldown = 0.3f;
                     break;
                 case Weapons.Keyboard:
-                    keyboardRotator.StartAttack();
+                    keyboardRotator.StartAttack(inputMenager.mousePos);
                     actionCooldown = 0.3f;
                     break;
                 case Weapons.None:

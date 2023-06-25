@@ -1,15 +1,13 @@
-﻿using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "MomFightngState", menuName = "SO/MomFightngState")]
-public class MomFightngState : AUnitState
+[CreateAssetMenu(fileName = "BoyzRoaminState", menuName = "SO/BoyzRoaminState")]
+public class BoyzRoaminState : AUnitState
 {
+    [SerializeField] private float roamingRadius = 5f;
     [SerializeField] private float speed = 10f;
     [SerializeField] private int enviroRays = 36;
     [SerializeField] private LayerMask layerMask;
     [SerializeField, Range(0f, 1f)] private float distanceWeight = 0.8f;
-    [SerializeField] private Klapek klapekPrefab;
 
     private Vector3 lastDirection;
     private bool canThrow;
@@ -30,7 +28,7 @@ public class MomFightngState : AUnitState
         {
             Vector3 checkedDirection = Quaternion.AngleAxis(i * 360f / enviroRays, Vector3.forward) * Vector3.up;
             Vector2 vectorToPlayer = unit.PlayerReference.transform.position - unit.transform.position;
-            float playerAdjustedMultiplier = -Vector3.Dot(checkedDirection, vectorToPlayer.normalized) * (5f - vectorToPlayer.magnitude);
+            float playerAdjustedMultiplier = -Vector3.Dot(checkedDirection, vectorToPlayer.normalized) * (roamingRadius - vectorToPlayer.magnitude);
             float movementSmoothnessMultiplier = Vector3.Dot(checkedDirection, lastDirection);
             float enviroAdjustedMultiplier = 0f;
 
@@ -55,13 +53,7 @@ public class MomFightngState : AUnitState
 
     public override void UpdateState(Unit unit)
     {
-        // Throwing
-        if (canThrow)
-        {
-            canThrow = false;
-            Klapek klapklap = Instantiate(klapekPrefab, unit.transform.position, Quaternion.identity);
-            klapklap.Init(unit, unit.PlayerReference.transform.position);
-        }
+        // Nothing
     }
 
     public override void OnCollisionEnterAction(Unit unit, Collision2D collision)
