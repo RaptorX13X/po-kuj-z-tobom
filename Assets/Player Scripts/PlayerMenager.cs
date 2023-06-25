@@ -10,11 +10,14 @@ public class PlayerMenager : MonoBehaviour
     [SerializeField] private ShardThrower pillow;
     [SerializeField] private KeyboardRotator keyboardRotator;
     [SerializeField] private BlankieController blankieController;
+    [SerializeField] private Animator animator;
     public enum Weapons { Pillow, Shard, Hanger, Blanket, Keyboard, None };
     private Weapons activeWeapon = Weapons.None;
     private float actionCooldown;
+
     private void FixedUpdate()
     {
+        movement.SetAnimSpeed(animator);
         movement.Move(inputMenager.input, inputMenager.mousePos);
         if (inputMenager.action)
         {
@@ -40,6 +43,9 @@ public class PlayerMenager : MonoBehaviour
     private void Update()
     {
         actionCooldown -= Time.deltaTime;
+
+
+        SetAnim(inputMenager.input);
         if (inputMenager.action && actionCooldown <= 0)
         {
             switch (activeWeapon)
@@ -58,6 +64,16 @@ public class PlayerMenager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void SetAnim(Vector2 input)
+    {
+        float angle = Vector2.SignedAngle(Vector2.up, input);
+        Debug.Log(angle);
+        if (angle > -45 && angle <= 45) animator.SetInteger("WalkDir", 0);
+        else if (angle > 45 && angle <= 135) animator.SetInteger("WalkDir", 3);
+        else if (angle > 135 || angle <= -135) animator.SetInteger("WalkDir", 2);
+        else animator.SetInteger("WalkDir", 1);
     }
 
     public void SetWeapon(Weapons weapon)

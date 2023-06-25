@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2294514095383501916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59,6 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6007057073784997863}
   - component: {fileID: 3295920275775044058}
+  - component: {fileID: 3662084371060295264}
   m_Layer: 7
   m_Name: VisiblePart
   m_TagString: Untagged
@@ -121,7 +122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 7577666df15ef7847bfcf2a895160186, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,6 +134,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3662084371060295264
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859474305903082265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a699902f48bc86d459048b1c2ac3eb77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6060627224824099375
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +167,7 @@ GameObject:
   - component: {fileID: 4436452156946707802}
   - component: {fileID: 5858105890910633693}
   - component: {fileID: 1149473816698014828}
+  - component: {fileID: 8141000762748094466}
   m_Layer: 0
   m_Name: Blankie
   m_TagString: Untagged
@@ -279,6 +301,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af758734748ecad4099ef83101007037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8141000762748094466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060627224824099375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac5fb2c734e264abde2307c925823e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wiggleRoom: 0.3
+  sR: {fileID: 2832145529419411798}
 --- !u!1 &6250364863067498983
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.09811318, g: 1, b: 0.87473285, a: 1}
   m_FlipX: 0
@@ -458,6 +494,7 @@ MonoBehaviour:
   pillow: {fileID: 7886017863706609646}
   keyboardRotator: {fileID: 2183727585374470954}
   blankieController: {fileID: 7357691657722625612}
+  animator: {fileID: 0}
 --- !u!114 &6250364863067498911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,8 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shardPrefab: {fileID: 7935227730692046854, guid: 437a740feb0e3504ea3c868e4f7d0b7e, type: 3}
-  cooldown: 0.5
-  vel: 11
+  cooldown: 0.4
+  vel: 12
   playerBody: {fileID: 6250364863067498909}
 --- !u!114 &7886017863706609646
 MonoBehaviour:
@@ -500,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shardPrefab: {fileID: 7716941297950889177, guid: cd3c0f709130b98419f0d01cfdb2eb47, type: 3}
-  cooldown: 1
+  cooldown: 0.7
   vel: 9
   playerBody: {fileID: 6250364863067498909}
 --- !u!58 &1299046416526441178
@@ -532,6 +569,7 @@ GameObject:
   - component: {fileID: 6250364864090229120}
   - component: {fileID: 6250364864090229121}
   - component: {fileID: 6250364864090229181}
+  - component: {fileID: 8238462981303379155}
   m_Layer: 0
   m_Name: Hanger
   m_TagString: Untagged
@@ -623,7 +661,7 @@ MonoBehaviour:
   velocity: 7
   player: {fileID: 6250364863067498909}
   returnAcceleration: 10
-  holdDistance: 1
+  holdDistance: 1.5
   rotationSpeed: 1000
   freeFlightDuration: 1
 --- !u!50 &6250364864090229121
@@ -663,6 +701,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8238462981303379155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250364864090229127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac5fb2c734e264abde2307c925823e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wiggleRoom: 0.3
+  sR: {fileID: 6250364864090229123}
 --- !u!1 &6483018512195788611
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +776,7 @@ GameObject:
   - component: {fileID: 4478451692419060729}
   - component: {fileID: 6873244029355780375}
   - component: {fileID: 8608858661839988165}
+  - component: {fileID: 6879309215288982970}
   m_Layer: 0
   m_Name: Keyboard
   m_TagString: Untagged
@@ -857,6 +910,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af758734748ecad4099ef83101007037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6879309215288982970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476850838258868519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac5fb2c734e264abde2307c925823e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wiggleRoom: 0.3
+  sR: {fileID: 5672472049430295279}
 --- !u!1 &8094150150567289154
 GameObject:
   m_ObjectHideFlags: 0

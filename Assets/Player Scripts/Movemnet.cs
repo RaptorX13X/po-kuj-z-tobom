@@ -15,4 +15,9 @@ public class Movemnet : MonoBehaviour
             rb.velocity = newVelocity;
         }
     }
+
+    public void SetAnimSpeed(Animator animator)
+    {
+        animator.SetFloat("Speed", rb.velocity.magnitude / speed);
+    }
 }
