@@ -10,6 +10,9 @@ public class BlobFightngState : AUnitState
     [SerializeField] private float jumpSpeed = 10f;
     [SerializeField] private float angleMaxDistortion = 25f;
     [SerializeField] private float distanceMaxDistortion = 0.5f;
+    private float distanceToFlip = 3f;
+    private float distanceTraveled = 0f;
+    private Vector2 lastPosition = Vector2.one * 9999;
 
     private Vector2 targetPosition;
 
@@ -28,6 +31,19 @@ public class BlobFightngState : AUnitState
 
         if (Vector2.Distance(unit.transform.position, targetPosition) <= 0.01f)
             unit.SwitchState(BlobChillingState.StateId);
+
+        if (lastPosition == Vector2.one * 9999)
+        {
+            lastPosition = unit.Rigidbody2D.position;
+            return;
+        }
+        distanceTraveled += (unit.Rigidbody2D.position - lastPosition).magnitude;
+        lastPosition = unit.Rigidbody2D.position;
+        if (distanceTraveled >= distanceToFlip)
+        {
+            distanceTraveled = 0;
+            unit.SpriteRenderer.flipX = !unit.SpriteRenderer.flipX;
+        }
     }
 
     public override void UpdateState(Unit unit)

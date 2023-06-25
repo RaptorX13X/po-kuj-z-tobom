@@ -659,9 +659,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 11400000, guid: 267a424614f594245b7d3f272f8f0ec1, type: 2}
-  - {fileID: 11400000, guid: 4c868001faf6efb45b1d7c854ad48f7a, type: 2}
   - {fileID: 11400000, guid: f941517aab22e12478c9060b8e2d0e12, type: 2}
+  - {fileID: 11400000, guid: 125dd1758bf40584d9b0cb8041385c2e, type: 2}
+  - {fileID: 11400000, guid: 267a424614f594245b7d3f272f8f0ec1, type: 2}
+  - {fileID: 11400000, guid: cdab35af323960e449d909a41ae592cb, type: 2}
+  - {fileID: 11400000, guid: 4c868001faf6efb45b1d7c854ad48f7a, type: 2}
   enemiesParent: {fileID: 789859327}
   enemiesSpawnPoint: {fileID: 1639942902}
   player: {fileID: 1175742567}

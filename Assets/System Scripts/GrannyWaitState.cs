@@ -7,6 +7,7 @@ public class GrannyWaitState : AUnitState
 
     [SerializeField] private float waitingTime = 5f;
     private float alreadyWaited;
+    private float flipTimer;
 
     public override void EnterState(Unit unit)
     {
@@ -17,7 +18,12 @@ public class GrannyWaitState : AUnitState
 
     public override void FixedUpdateState(Unit unit)
     {
-        // Nothing
+        flipTimer -= Time.fixedDeltaTime;
+        if (flipTimer <= 0)
+        {
+            flipTimer = Random.Range(.3f, 1f);
+            unit.SpriteRenderer.flipX = !unit.SpriteRenderer.flipX;
+        }
     }
 
     public override void UpdateState(Unit unit)

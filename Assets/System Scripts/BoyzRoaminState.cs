@@ -17,6 +17,9 @@ public class BoyzRoaminState : AUnitState
     private int usedEnviroRays;
     private float usedSpeed;
     private float usedRoamingRadius;
+    private float distanceToFlip = 3f;
+    private float distanceTraveled = 0f;
+    private Vector2 lastPosition = Vector2.one * 9999;
 
     public override void EnterState(Unit unit)
     {
@@ -59,6 +62,18 @@ public class BoyzRoaminState : AUnitState
         }
         lastDirection = bestDirection;
         unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, unit.transform.position + (bestDirection + secondBestDirection) / 2f, usedSpeed * Time.fixedDeltaTime));
+        if (lastPosition == Vector2.one * 9999)
+        {
+            lastPosition = unit.Rigidbody2D.position;
+            return;
+        }
+        distanceTraveled += (unit.Rigidbody2D.position - lastPosition).magnitude;
+        lastPosition = unit.Rigidbody2D.position;
+        if (distanceTraveled >= distanceToFlip)
+        {
+            distanceTraveled = 0;
+            unit.SpriteRenderer.flipX = !unit.SpriteRenderer.flipX;
+        }
     }
 
     public override void UpdateState(Unit unit)
