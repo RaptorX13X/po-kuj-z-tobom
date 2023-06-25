@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] private EnemyHealthbar healthBar;
     [SerializeField] private bool isPlayer;
     [SerializeField] private float invincibleTime = 0.1f;
+    public bool dead;
 
     public event Action OnDeath;
     public event Action OnDamaged;
@@ -20,6 +21,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
+        dead = false;
         currentHealth = health;
         if (!isPlayer)
             healthBar.SetMaxHealth(health);
@@ -47,6 +49,7 @@ public class Health : MonoBehaviour
             OnDeath?.Invoke();
             if (gameObject.TryGetComponent(out PlayerMenager playerM)) gameObject.SetActive(false); 
             else Destroy(gameObject);
+            dead = true;
         }
     }
 
