@@ -29,7 +29,7 @@ public class BlobFightngState : AUnitState
     {
         unit.Rigidbody2D.MovePosition(Vector2.MoveTowards(unit.transform.position, targetPosition, jumpSpeed * Time.fixedDeltaTime));
 
-        if (Vector2.Distance(unit.transform.position, targetPosition) <= 0.01f)
+        if (Vector2.Distance(unit.transform.position, targetPosition) <= 0.1f)
             unit.SwitchState(BlobChillingState.StateId);
 
         if (lastPosition == Vector2.one * 9999)

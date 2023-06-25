@@ -20,6 +20,12 @@ public class PlayerMenager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (inputMenager.dashPressed)
+        {
+            inputMenager.dashPressed = false;
+            dashController.TryApplyDash(inputMenager.mousePos, inputMenager.input);
+        }
+
         movement.SetAnimSpeed(animator);
         movement.Move(inputMenager.input, inputMenager.mousePos);
         if (inputMenager.action)
@@ -40,12 +46,6 @@ public class PlayerMenager : MonoBehaviour
                     actionCooldown = 0.3f;
                     break;
             }
-        }
-
-        if (inputMenager.dashPressed)
-        {
-            inputMenager.dashPressed = false;
-            dashController.TryApplyDash(inputMenager.mousePos, inputMenager.input);
         }
     }
 
