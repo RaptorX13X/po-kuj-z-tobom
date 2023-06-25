@@ -8,13 +8,15 @@ public class InputMenager : MonoBehaviour
     public Vector2 input { private set; get; }
     public bool action { private set; get; }
     public Vector3 mousePos;
+    public bool dashPressed;
 
-void Update()
+    private void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         action = Input.GetKey(KeyCode.E);
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
+        dashPressed = dashPressed || Input.GetKeyDown(KeyCode.Space);
     }
 
 }

@@ -11,6 +11,7 @@ public class PlayerMenager : MonoBehaviour
     [SerializeField] private KeyboardRotator keyboardRotator;
     [SerializeField] private BlankieController blankieController;
     [SerializeField] private Animator animator;
+    [SerializeField] private DashController dashController;
     public enum Weapons { Pillow, Shard, Hanger, Blanket, Keyboard, None };
     private Weapons activeWeapon = Weapons.None;
     private float actionCooldown;
@@ -37,6 +38,12 @@ public class PlayerMenager : MonoBehaviour
                     actionCooldown = 0.3f;
                     break;
             }
+        }
+
+        if (inputMenager.dashPressed)
+        {
+            inputMenager.dashPressed = false;
+            dashController.TryApplyDash(inputMenager.mousePos, inputMenager.input);
         }
     }
 
