@@ -68,4 +68,9 @@ public class GameUIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartPlaying()
+    {
+        playing = true;
+    }
 }

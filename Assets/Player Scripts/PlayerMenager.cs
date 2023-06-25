@@ -17,7 +17,10 @@ public class PlayerMenager : MonoBehaviour
     private float actionCooldown;
 
     [SerializeField] private AudioClip pickUpSound;
-
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     private void FixedUpdate()
     {
         movement.SetAnimSpeed(animator);
@@ -88,8 +91,12 @@ public class PlayerMenager : MonoBehaviour
 
     public void SetWeapon(Weapons weapon)
     {
-        if(weapon != Weapons.None)
+        if (weapon != Weapons.None)
+        {
             AudioManager.instance.PlaySound(pickUpSound);
+            FindObjectOfType<WaveManager>().NextWave();
+        }
+
         switch (activeWeapon)
         {
             case Weapons.Shard:

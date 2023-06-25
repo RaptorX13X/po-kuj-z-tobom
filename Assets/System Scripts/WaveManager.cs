@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     public Vector2 EnemiesSpawnPoint => enemiesSpawnPoint.position;
     public PlayerMenager Player => player;
 
+    public bool GameStarted;
 
     private void Start()
     {
@@ -24,9 +25,11 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
+        if (!GameStarted) return;
+
         if (EnemiesAlive == 0)
         {
-            NextWave();
+            player.SetWeapon(PlayerMenager.Weapons.None);
         }
     }
 
@@ -34,7 +37,6 @@ public class WaveManager : MonoBehaviour
     {
         AudioManager.instance.PlaySound(doorSound);
         currentWave++;
-        player.SetWeapon(PlayerMenager.Weapons.None);
         if (currentWave < waves.Length)
         {
             CleanRoom();
