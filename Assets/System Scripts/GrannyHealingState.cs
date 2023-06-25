@@ -7,9 +7,11 @@ public class GrannyHealingState : AUnitState
 
     [SerializeField] private int healingValue = 4;
     [SerializeField] private int selfHealingValue = 2;
+    [SerializeField] private AudioClip dorimeSound;
 
     public override void EnterState(Unit unit)
     {
+        AudioManager.instance.PlaySound(dorimeSound);
         var gran = GrampsBrain.Instance.Grandpa;
         unit.SpriteRenderer.sprite = stateSprite;
         if (gran != null)

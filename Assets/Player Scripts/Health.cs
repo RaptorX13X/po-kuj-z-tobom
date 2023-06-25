@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] private bool isPlayer;
     [SerializeField] private float invincibleTime = 0.1f;
     public bool dead;
+    [SerializeField] private AudioClip damagedSound;
 
     public event Action OnDeath;
     public event Action OnDamaged;
@@ -40,6 +41,7 @@ public class Health : MonoBehaviour
         remainingInvincibleTime = invincibleTime;
 
         currentHealth -= 1;
+        AudioManager.instance.PlaySound(damagedSound);
         OnDamaged?.Invoke();
         if (!isPlayer)
             healthBar.SetHealth(currentHealth);

@@ -12,6 +12,7 @@ public class BlankieController : MonoBehaviour
     [SerializeField] private Collider2D attackCollider;
     private float timer;
     private int attackInProgress;
+    [SerializeField] private AudioClip whipSound;
 
     private void Update()
     {
@@ -46,5 +47,6 @@ public class BlankieController : MonoBehaviour
         attackInProgress = 1;
         timer = 0;
         attackCollider.enabled = true;
+        AudioManager.instance.PlaySound(whipSound);
     }
 }
