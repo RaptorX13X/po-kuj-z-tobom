@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
         if (EnemiesAlive == 0)
         {
             player.SetWeapon(PlayerMenager.Weapons.None);
-            if (currentWave >= waves.Length-1)
+            if (currentWave >= waves.Length - 1)
             {
                 DisplayWinScreen();
                 gameFinished = true;

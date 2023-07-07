@@ -68,12 +68,12 @@ public class GameUIManager : MonoBehaviour
 
     public void DisplayVictoryScreen()
     {
+        FindObjectOfType<PlayerMenager>().gameObject.SetActive(false);
         victoryScreen.SetActive(true);
         Time.timeScale = 0f;
         playing = false;
         audioManager.StopAllSounds();
         AudioManager.instance.PlaySound(victory);
-        timer.GameObject().SetActive(false);
     }
 
     public void MainMenu()
